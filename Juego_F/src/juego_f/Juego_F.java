@@ -19,9 +19,12 @@ public class Juego_F {
     public static void main(String[] args) {
         // Entradas y validacion de jugadores
         int num_jugadores=3,opcion,j=0,numcasillas=0,i=0,suma=0;
-        int[ ] sump = new int[4];
-       
-        String respuesta_U="";
+
+       int posicion1=20;
+        int sump1=0,sump2=0,sump3=0,sump4=0,turno=1;
+        Scanner waitForKeypress = new Scanner(System.in);      
+        int sumpt1=0,sumpt2=0,sumpt3=0,sumpt4=0;        
+        String respuesta_U="s";
         //char[]num_jugadores=new char[num_jugadores];
         //Random dados_aleatorios=new Random();
         //dado1= (int)(Math.random()*6);
@@ -116,24 +119,178 @@ public class Juego_F {
             
             do{
                     for (i=1;i<=num_jugadores;i++){
+                    }
+                    System.out.println("Precione enter para lanzar dados para el jugador 1.");
+                    System.out.println("***************************************");
+                    System.out.println("---------------------------------------");                     
+                    waitForKeypress.nextLine();
+                    
+                   if (num_jugadores==2){
+                      if (turno==1){
                     int punp1d1 = (int)(Math.random()*6+1);
                     int punp1d2= (int)(Math.random()*6+1);
-                    System.out.println("player "+i+": "+"Dado 1: "+punp1d1+"||Dado 2: "+punp1d2);
-                    suma=punp1d1+punp1d2;
-                    suma=suma+sump[i];
-                    }    
-            }while (sump[i]<=numcasillas);
+                    System.out.println("dado 1: "+punp1d1);
+                    System.out.println("dado 2: "+punp1d2);                    
+                    sump1=punp1d2+punp1d1;
+                    sumpt1=sump1+sumpt1;
+                    turno=2;
+                    }
+                    System.out.println("Precione enter para lanzar dados para el jugador 2.");
+                    System.out.println("***************************************");
+                    System.out.println("---------------------------------------");                      
+                    waitForKeypress.nextLine();
+                    if (turno==2){
+                    int punp1d1 = (int)(Math.random()*6+1);
+                    int punp1d2= (int)(Math.random()*6+1);
+                    System.out.println("dado 1: "+punp1d1);
+                    System.out.println("dado 2: "+punp1d2);                     
+                    sump2=punp1d2+punp1d1;
+                    sumpt2=sump2+sumpt2;                                            
+                    }
+                    turno=1;
+                    } 
+                        if (num_jugadores==3){
+                           if (turno==1){
+                            int punp1d1 = (int)(Math.random()*6+1);
+                            int punp1d2= (int)(Math.random()*6+1);
+                            System.out.println("dado 1: "+punp1d1);
+                            System.out.println("dado 2: "+punp1d2);                    
+                            sump1=punp1d2+punp1d1;
+                            sumpt1=sump1+sumpt1;
+                            turno=2;
+                            }
+                            System.out.println("Precione enter para lanzar dados para el jugador 2.");
+                            System.out.println("***************************************");
+                            System.out.println("---------------------------------------");                      
+                            waitForKeypress.nextLine();
+                           if (turno==2){
+                            int punp1d1 = (int)(Math.random()*6+1);
+                            int punp1d2= (int)(Math.random()*6+1);
+                            System.out.println("dado 1: "+punp1d1);
+                            System.out.println("dado 2: "+punp1d2);                     
+                            sump2=punp1d2+punp1d1;
+                            sumpt2=sump2+sumpt2;                    
+                            turno=3;                        
+                            }
+                            System.out.println("Presione enter para lanzar dados para el jugador 3.");
+                            System.out.println("***************************************");
+                            System.out.println("---------------------------------------");                      
+                            waitForKeypress.nextLine();
+                            if(turno==3){
+                             int punp1d1=(int)(Math.random()*6+1);
+                             int punp1d2=(int)(Math.random()*6+1);
+                             System.out.println("dado 1: "+punp1d1);
+                             System.out.println("dado 2: "+punp1d2);                         
+                             sump3=punp1d2+punp1d1;
+                             sumpt3=sump3+sumpt3;                        
 
+                            }
+                            turno=1;
+                            }
+                        if(num_jugadores==4){    
+                         if (turno==1){
+                         int punp1d1 = (int)(Math.random()*6+1);
+                         int punp1d2= (int)(Math.random()*6+1);
+                         System.out.println("dado 1: "+punp1d1);
+                         System.out.println("dado 2: "+punp1d2);                    
+                         sump1=punp1d2+punp1d1;
+                         sumpt1=sump1+sumpt1;
+                         turno=2;
+                         }
+                         System.out.println("Precione enter para lanzar dados para el jugador 2.");
+                         System.out.println("***************************************");
+                         System.out.println("---------------------------------------");                      
+                         waitForKeypress.nextLine();
+                         if (turno==2){
+                         int punp1d1 = (int)(Math.random()*6+1);
+                         int punp1d2= (int)(Math.random()*6+1);
+                         System.out.println("dado 1: "+punp1d1);
+                         System.out.println("dado 2: "+punp1d2);                     
+                         sump2=punp1d2+punp1d1;
+                         sumpt2=sump2+sumpt2;                    
+                         turno=3;                        
+                         }
+                         System.out.println("Presione enter para lanzar dados para el jugador 3.");
+                         System.out.println("***************************************");
+                         System.out.println("---------------------------------------");                      
+                         waitForKeypress.nextLine();
+                         if(turno==3){
+                             int punp1d1=(int)(Math.random()*6+1);
+                             int punp1d2=(int)(Math.random()*6+1);
+                             System.out.println("dado 1: "+punp1d1);
+                             System.out.println("dado 2: "+punp1d2);                         
+                             sump3=punp1d2+punp1d1;
+                             sumpt3=sump3+sumpt3;                        
+                             turno=4;
+                         }
+                         System.out.println("Presione enter para lanzar dados para el jugador 4.");
+                         System.out.println("***************************************");
+                         System.out.println("---------------------------------------");                      
+                         waitForKeypress.nextLine();
+                         if(turno==4){
+                             int punp1d1=(int)(Math.random()*6+1);
+                             int punp1d2=(int)(Math.random()*6+1);
+                             System.out.println("dado 1: "+punp1d1);
+                             System.out.println("dado 2: "+punp1d2);                         
+                             sump4=punp1d2+punp1d2;
+                             sumpt4=sump4+sumpt4;                        
+                         }
+                         turno=1;
+                        }   
+                    
+                    
                 
-                if(sump[i]>=numcasillas){
+            }while(sumpt1>=numcasillas || sumpt2>=numcasillas || sumpt3>=numcasillas || sumpt4>=numcasillas);
+            
+            
+                
+ 
+            }while(sumpt1>=numcasillas || sumpt2>=numcasillas || sumpt3>=numcasillas || sumpt4>=numcasillas);
+            
+            if (sump1>numcasillas){
+                System.out.println("---------------------------------------");
+                System.out.println("");
+                System.out.println("************CARRERA NUMERICA***********");
+                System.out.println("");
+                System.out.println("El jugador 1 a ganado la partida.      ");
+                System.out.println("");  
+                System.out.println("---------------------------------------");                
+            }else
+                if (sump2>numcasillas){
+                    System.out.println("---------------------------------------");
+                    System.out.println("");
+                    System.out.println("************CARRERA NUMERICA***********");
+                    System.out.println("");
+                    System.out.println("El jugador 2 a ganado la partida.      ");
+                    System.out.println("");  
+                    System.out.println("---------------------------------------");                    
+                }else
+                    if (sump1>numcasillas){
+                        System.out.println("---------------------------------------");
+                        System.out.println("");
+                        System.out.println("************CARRERA NUMERICA***********");
+                        System.out.println("");
+                        System.out.println("El jugador 3 a ganado la partida.      ");
+                        System.out.println("");  
+                        System.out.println("---------------------------------------");                
+                    }else
+                        if (sump2>numcasillas){
+                            System.out.println("---------------------------------------");
+                            System.out.println("");
+                            System.out.println("************CARRERA NUMERICA***********");
+                            System.out.println("");
+                            System.out.println("El jugador 4 a ganado la partida.      ");
+                            System.out.println("");  
+                            System.out.println("---------------------------------------");                    
+                        }
+                           
                 System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");   
                 System.out.println("▓♥ ♥ ♥ ♥ ♥ ♥ ♥  GAME OVER ♥ ♥ ♥ ♥ ♥ ♥ ♥ ▓");
                 System.out.println("▓        ¿QUIERE SEGUIR JUGANDO?        ▓");
                 System.out.println("▓       S/s                   N/n       ▓");
                 System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
                 respuesta_U=reader.nextLine();
-                }
-            }while(sump[i]>=numcasillas);
+                
         }while(respuesta_U.equals("N") || respuesta_U.equals("n"));
 
     }
