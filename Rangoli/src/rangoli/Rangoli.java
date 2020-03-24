@@ -18,7 +18,7 @@ public class Rangoli {
      */
     public static void main(String[] args) {
     Scanner reader = new Scanner (System.in);
-    int i=1,ban=1,rep=0;    
+    int i=1,ban=0,rep=1;    
     char abc[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'};
     /*abc[1]='a';
     abc[2]='b';
@@ -48,7 +48,7 @@ public class Rangoli {
     abc[26]='y';
     abc[27]='z';
     */
-while(ban==1){
+
     System.out.println("Digite un numero entero:");
     System.out.println("el numero representa la ");
     System.out.println("letra del abecedario a  ");
@@ -67,7 +67,7 @@ while(ban==1){
         ban=0; 
         System.out.println("el dato fue exitosamente guardado.");
     }
-}
+
 System.out.println(" "+" "+abc[i]+" ");
 while(i>=0){
     System.out.print(abc[i]+" ");
@@ -79,7 +79,7 @@ while(i<=rep){
     i++;
 }
 i=rep;
-System.out.print(" "+" "+abc[i]+" ");    
+System.out.print(" "+abc[i]+" ");    
 }
 }
 
