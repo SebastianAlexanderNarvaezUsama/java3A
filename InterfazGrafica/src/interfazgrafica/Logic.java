@@ -235,12 +235,18 @@ int ban1=1,ban2=1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+              if( jTextField1.getText().isEmpty()|| jTextField2.getText().isEmpty()) {
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        }else{
         int num1=0,num2=0,res=0;
         num1=Integer.parseInt(jTextField1.getText());
         num2=Integer.parseInt(jTextField2.getText());
         res=num1+num2;
          jLabel4.setText(Integer.toString(res));
+              }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -252,29 +258,49 @@ int ban1=1,ban2=1;
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if( jTextField1.getText().isEmpty()|| jTextField2.getText().isEmpty()) {
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        }else{
         int num1=0,num2=0,res=0;
         num1=Integer.parseInt(jTextField1.getText());
         num2=Integer.parseInt(jTextField2.getText());
         res=num1-num2;
          jLabel4.setText(Integer.toString(res));
-         
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+                if( jTextField1.getText().isEmpty()|| jTextField2.getText().isEmpty()) {
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        }else{
         float res=0;
         int num1=0,num2=0;
         num1=Integer.parseInt(jTextField1.getText());
         num2=Integer.parseInt(jTextField2.getText());
         res=(float)num1/num2;
-         jLabel4.setText(Float.toString(res));
+        jLabel4.setText(Float.toString(res));
+                }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+                if( jTextField1.getText().isEmpty()|| jTextField2.getText().isEmpty()) {
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        }else{
         int num1=0,num2=0,res=0;
         num1=Integer.parseInt(jTextField1.getText());
         num2=Integer.parseInt(jTextField2.getText());
         res=num1*num2;
          jLabel4.setText(Integer.toString(res));
+                }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
