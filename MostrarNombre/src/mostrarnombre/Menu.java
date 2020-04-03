@@ -5,7 +5,7 @@
  */
 package mostrarnombre;
 
-import java.awt.Color;
+
 
 
 
@@ -14,16 +14,72 @@ import java.awt.Color;
  * @author Asus
  */
 public class Menu extends javax.swing.JFrame {
-
-    /**
+String Nombre="",Mayus="",Minus="",Completo=Nombre;;
+ int contador=0,conspa=0,fin=0,buscar=0,i;
+ Character letrabuscar=' ';
+ char letra=' ';
+ int letrainicial=0;
+ /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
-        /*jButtonSHOW.setBackground(Color.red);*/
+        jButtonENG.setEnabled(false);
+        jButtonMAY.setEnabled(false);  
+        jButtonMIN.setEnabled(false);  
+        jButtonRESET.setEnabled(false);  
+        jButtonSEARCH.setEnabled(false);  
+        jButtonSHOW.setEnabled(false);    
+        
+            /*
+jButtonSHOW.setBackground(Color.red);*/
     }
-
+    public void Valores(){
+    int contador=0,conspa=0,fin=0,buscar=0;
+    }
+    public void Botones(){
+    if (!jTextFieldNombre.getText().isEmpty()){
+      jButtonMAY.setEnabled(true);  
+      jButtonMIN.setEnabled(true);  
+      jButtonRESET.setEnabled(true);  
+      jButtonSEARCH.setEnabled(true);  
+      jButtonSHOW.setEnabled(true);  
+    }else{
+      jButtonMAY.setEnabled(false);  
+      jButtonMIN.setEnabled(false);  
+      jButtonRESET.setEnabled(false);  
+      jButtonSEARCH.setEnabled(false);  
+      jButtonSHOW.setEnabled(false);  
+    }    
+    }
+    public String characters(String parametro){
+       for (i=0;i<parametro.length();i++){
+           letra=parametro.charAt(i);
+           if(i==0){
+             letra=Character.toUpperCase(letra);  
+           }
+           if(i>=1){
+             letra=Character.toLowerCase(letra);  
+           }
+           if(letra==' '){
+               letrainicial=i+1;
+             letra=Character.toLowerCase(letra);
+             conspa++;
+           }
+           if(letrainicial==i){
+             letra=Character.toUpperCase(letra);  
+           }
+           contador++;
+           Completo+=letra;
+       }
+       fin=contador+conspa;
+       return Completo;  
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,18 +101,18 @@ public class Menu extends javax.swing.JFrame {
         jLabelSubTitulo2 = new javax.swing.JLabel();
         jLabelSubTitulo3 = new javax.swing.JLabel();
         jLabelSubTitulo4 = new javax.swing.JLabel();
-        jLabelMostrarNombre = new javax.swing.JLabel();
-        jLabelMostrarNombre1 = new javax.swing.JLabel();
-        jLabelMostrarNombre2 = new javax.swing.JLabel();
-        jLabelMostrarNombre3 = new javax.swing.JLabel();
-        jLabelMostrarNombre4 = new javax.swing.JLabel();
+        jLabelMostrarNombrea = new javax.swing.JLabel();
+        jLabelMostrarNombreb = new javax.swing.JLabel();
+        jLabelMostrarNombree = new javax.swing.JLabel();
+        jLabelMostrarNombrec = new javax.swing.JLabel();
+        jLabelMostrarNombred = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelTitulo2 = new javax.swing.JLabel();
-        jTextFieldNombre1 = new javax.swing.JTextField();
+        jTextFieldbuscar = new javax.swing.JTextField();
         jButtonSEARCH = new javax.swing.JButton();
         jLabelLetra = new javax.swing.JLabel();
-        jButtonESP1 = new javax.swing.JButton();
-        jButtonESP2 = new javax.swing.JButton();
+        jButtonMAY = new javax.swing.JButton();
+        jButtonMIN = new javax.swing.JButton();
         jLabelTitulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,13 +123,25 @@ public class Menu extends javax.swing.JFrame {
         jButtonESP.setBackground(new java.awt.Color(0, 0, 204));
         jButtonESP.setForeground(new java.awt.Color(255, 255, 255));
         jButtonESP.setText("ESP");
+        jButtonESP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jButtonENG.setBackground(new java.awt.Color(247, 148, 0));
         jButtonENG.setForeground(new java.awt.Color(255, 255, 255));
         jButtonENG.setText("ENG");
+        jButtonENG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jTextFieldNombre.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextFieldNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreActionPerformed(evt);
+            }
+        });
+        jTextFieldNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldNombreKeyReleased(evt);
+            }
+        });
 
         jButtonSHOW.setBackground(new java.awt.Color(212, 0, 0));
         jButtonSHOW.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -92,6 +160,11 @@ public class Menu extends javax.swing.JFrame {
         jButtonRESET.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRESET.setText("RESET");
         jButtonRESET.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3)));
+        jButtonRESET.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRESETActionPerformed(evt);
+            }
+        });
 
         jPanelPantalla2.setBackground(new java.awt.Color(255, 255, 255));
         jPanelPantalla2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Information", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
@@ -111,15 +184,15 @@ public class Menu extends javax.swing.JFrame {
         jLabelSubTitulo4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabelSubTitulo4.setText("Initial caption letters :");
 
-        jLabelMostrarNombre.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabelMostrarNombrea.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
 
-        jLabelMostrarNombre1.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabelMostrarNombreb.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
 
-        jLabelMostrarNombre2.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabelMostrarNombree.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
 
-        jLabelMostrarNombre3.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabelMostrarNombrec.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
 
-        jLabelMostrarNombre4.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabelMostrarNombred.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Letter finder", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
@@ -127,25 +200,33 @@ public class Menu extends javax.swing.JFrame {
         jLabelTitulo2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabelTitulo2.setText("Type a number:");
 
-        jTextFieldNombre1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTextFieldNombre1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jTextFieldbuscar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextFieldbuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         jButtonSEARCH.setBackground(new java.awt.Color(204, 255, 0));
         jButtonSEARCH.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonSEARCH.setText("SEARCH");
+        jButtonSEARCH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButtonSEARCH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSEARCHActionPerformed(evt);
+            }
+        });
 
         jLabelLetra.setBackground(new java.awt.Color(255, 255, 255));
         jLabelLetra.setFont(new java.awt.Font("Times New Roman", 1, 60)); // NOI18N
         jLabelLetra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLetra.setText("?");
 
-        jButtonESP1.setBackground(new java.awt.Color(0, 0, 204));
-        jButtonESP1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonESP1.setText("MAY");
+        jButtonMAY.setBackground(new java.awt.Color(0, 0, 204));
+        jButtonMAY.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonMAY.setText("MAY");
+        jButtonMAY.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        jButtonESP2.setBackground(new java.awt.Color(255, 153, 0));
-        jButtonESP2.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonESP2.setText("MIN");
+        jButtonMIN.setBackground(new java.awt.Color(255, 153, 0));
+        jButtonMIN.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonMIN.setText("MIN");
+        jButtonMIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,15 +235,15 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextFieldNombre1)
+                    .addComponent(jTextFieldbuscar)
                     .addComponent(jLabelTitulo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonSEARCH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(76, 76, 76)
                 .addComponent(jLabelLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonESP1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addComponent(jButtonESP2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonMAY, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                    .addComponent(jButtonMIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -173,16 +254,16 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelTitulo2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addComponent(jButtonSEARCH)
                         .addGap(22, 22, 22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonESP1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonMAY, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonESP2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonMIN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jLabelLetra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
@@ -199,23 +280,20 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanelPantalla2Layout.createSequentialGroup()
+                        .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelSubTitulo1)
+                            .addComponent(jLabelSubTitulo2)
+                            .addComponent(jLabelSubTitulo3)
+                            .addComponent(jLabelSubTitulo4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelPantalla2Layout.createSequentialGroup()
-                                .addComponent(jLabelSubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(jLabelMostrarNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanelPantalla2Layout.createSequentialGroup()
-                                .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelSubTitulo1)
-                                    .addComponent(jLabelSubTitulo2)
-                                    .addComponent(jLabelSubTitulo3)
-                                    .addComponent(jLabelSubTitulo4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabelMostrarNombre1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                                    .addComponent(jLabelMostrarNombre3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelMostrarNombre4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelMostrarNombre2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabelMostrarNombrea, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                            .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabelMostrarNombrec, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                                .addComponent(jLabelMostrarNombred, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMostrarNombree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMostrarNombreb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanelPantalla2Layout.setVerticalGroup(
@@ -224,25 +302,25 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelSubTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelMostrarNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabelMostrarNombrea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelMostrarNombre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelMostrarNombreb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelSubTitulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelSubTitulo2)
-                    .addComponent(jLabelMostrarNombre3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabelMostrarNombrec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPantalla2Layout.createSequentialGroup()
                         .addComponent(jLabelSubTitulo3)
                         .addGap(3, 3, 3))
-                    .addComponent(jLabelMostrarNombre4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabelMostrarNombred, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelSubTitulo4)
-                    .addComponent(jLabelMostrarNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelMostrarNombree, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -263,9 +341,9 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanelPantalla1Layout.createSequentialGroup()
                             .addComponent(jLabelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonESP)
+                            .addComponent(jButtonESP, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButtonENG)))
+                            .addComponent(jButtonENG, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelPantalla1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jButtonSHOW, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonRESET, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -282,9 +360,9 @@ public class Menu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPantalla1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanelPantalla1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonESP)
-                            .addComponent(jButtonENG))
+                        .addGroup(jPanelPantalla1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButtonESP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonENG, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)))
                 .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -311,8 +389,48 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSHOWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSHOWActionPerformed
-        // TODO add your handling code here:
+     if (!jTextFieldNombre.getText().isEmpty()){
+      Nombre=jTextFieldNombre.getText();
+     jLabelMostrarNombrea.setText(Nombre);
+     String Mayus = Nombre.toUpperCase();
+     jLabelMostrarNombreb.setText(Mayus);
+     String Minus = Nombre.toLowerCase();
+     jLabelMostrarNombrec.setText(Minus);
+     characters(Nombre);
+     jLabelMostrarNombred.setText(Integer.toString(fin));;
+     jLabelMostrarNombree.setText(Completo);
+     Valores();
+    }else{
+     jTextFieldNombre.setText("");
+     jLabelMostrarNombrea.setText("");
+     jLabelMostrarNombreb.setText("");
+     jLabelMostrarNombrec.setText("");
+     jLabelMostrarNombred.setText("");;
+     jLabelMostrarNombree.setText("");  
+    }
+     
     }//GEN-LAST:event_jButtonSHOWActionPerformed
+
+    private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreActionPerformed
+
+    private void jTextFieldNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreKeyReleased
+    Botones();        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreKeyReleased
+
+    private void jButtonRESETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRESETActionPerformed
+     jTextFieldNombre.setText("");
+     jLabelMostrarNombrea.setText("");
+     jLabelMostrarNombreb.setText("");
+     jLabelMostrarNombrec.setText("");
+     jLabelMostrarNombred.setText("");;
+     jLabelMostrarNombree.setText("");
+    }//GEN-LAST:event_jButtonRESETActionPerformed
+
+    private void jButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSEARCHActionPerformed
+
+    }//GEN-LAST:event_jButtonSEARCHActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,17 +470,17 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonENG;
     private javax.swing.JButton jButtonESP;
-    private javax.swing.JButton jButtonESP1;
-    private javax.swing.JButton jButtonESP2;
+    private javax.swing.JButton jButtonMAY;
+    private javax.swing.JButton jButtonMIN;
     private javax.swing.JButton jButtonRESET;
     private javax.swing.JButton jButtonSEARCH;
     private javax.swing.JButton jButtonSHOW;
     private javax.swing.JLabel jLabelLetra;
-    private javax.swing.JLabel jLabelMostrarNombre;
-    private javax.swing.JLabel jLabelMostrarNombre1;
-    private javax.swing.JLabel jLabelMostrarNombre2;
-    private javax.swing.JLabel jLabelMostrarNombre3;
-    private javax.swing.JLabel jLabelMostrarNombre4;
+    private javax.swing.JLabel jLabelMostrarNombrea;
+    private javax.swing.JLabel jLabelMostrarNombreb;
+    private javax.swing.JLabel jLabelMostrarNombrec;
+    private javax.swing.JLabel jLabelMostrarNombred;
+    private javax.swing.JLabel jLabelMostrarNombree;
     private javax.swing.JLabel jLabelSubTitulo;
     private javax.swing.JLabel jLabelSubTitulo1;
     private javax.swing.JLabel jLabelSubTitulo2;
@@ -374,6 +492,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelPantalla1;
     private javax.swing.JPanel jPanelPantalla2;
     private javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldNombre1;
+    private javax.swing.JTextField jTextFieldbuscar;
     // End of variables declaration//GEN-END:variables
 }
