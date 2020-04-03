@@ -59,18 +59,18 @@ jButtonSHOW.setBackground(Color.red);*/
            if(i>=1){
              letra=Character.toLowerCase(letra);  
            }
-           if(letra==' '){
-               letrainicial=i+1;
+           if(letra==' '){             
+             letrainicial=i+1;
              letra=Character.toLowerCase(letra);
-             conspa++;
            }
            if(letrainicial==i){
-             letra=Character.toUpperCase(letra);  
+             letra=Character.toUpperCase(letra);
+             
            }
            contador++;
            Completo+=letra;
        }
-       fin=contador+conspa;
+       fin=contador;
        return Completo;  
     }
     
@@ -175,6 +175,7 @@ jButtonSHOW.setBackground(Color.red);*/
 
         jPanelPantalla2.setBackground(new java.awt.Color(255, 255, 255));
         jPanelPantalla2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Information", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
+        jPanelPantalla2.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
 
         jLabelSubTitulo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabelSubTitulo.setText("Your name is :");
@@ -466,6 +467,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonRESET.setText("RESET");
         jButtonSEARCH.setText("SEARCH");
         jPanelPantalla2.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
+        
         jPanelPantalla3.setBorder(javax.swing.BorderFactory.createTitledBorder("letter finder"));
         jButtonESP.setEnabled(true);
         jButtonENG.setEnabled(false);        // TODO add your handling code here:
