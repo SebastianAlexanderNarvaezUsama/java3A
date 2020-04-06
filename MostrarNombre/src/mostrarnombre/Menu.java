@@ -5,6 +5,9 @@
  */
 package mostrarnombre;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
+
 
 
 
@@ -36,20 +39,22 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
 jButtonSHOW.setBackground(Color.red);*/
     }
     public void Botones(){
-    if (!jTextFieldNombre.getText().isEmpty()){
-      jButtonMAY.setEnabled(true);  
-      jButtonMIN.setEnabled(true);  
+    if (!jTextFieldNombre.getText().isEmpty()){  
       jButtonRESET.setEnabled(true);  
       jButtonSEARCH.setEnabled(true);  
-      jButtonSHOW.setEnabled(true);  
-    }else{
+      jButtonSHOW.setEnabled(true);
       jButtonMAY.setEnabled(false);  
       jButtonMIN.setEnabled(false);  
+    }else{
       jButtonRESET.setEnabled(false);  
       jButtonSEARCH.setEnabled(false);  
       jButtonSHOW.setEnabled(false);  
-    }    
+      jButtonMAY.setEnabled(false);  
+      jButtonMIN.setEnabled(false);      
+    }   
     }
+
+    
     public String characters(String parametro){
        for (i=0;i<parametro.length();i++){
            letra=parametro.charAt(i);
@@ -79,7 +84,7 @@ jButtonSHOW.setBackground(Color.red);*/
     Buscarletra = Nombre.toCharArray();
     for ( x=1;x<Nombre.length();x++){
         if((letrabuscar-1)==x){
-        System.out.println(Character.toString(Buscarletra [x]));
+        Character.toString(Buscarletra [x]);
         letraf=Integer.toString(Buscarletra [x]);
         
         }
@@ -216,9 +221,9 @@ jButtonSHOW.setBackground(Color.red);*/
 
         jTextFieldbuscar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextFieldbuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jTextFieldbuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldbuscarActionPerformed(evt);
+        jTextFieldbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldbuscarKeyReleased(evt);
             }
         });
 
@@ -445,16 +450,24 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jTextFieldNombreKeyReleased
 
     private void jButtonRESETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRESETActionPerformed
-     jTextFieldNombre.setText("");
+     jTextFieldNombre.setText("");/*
      jLabelMostrarNombrea.setText("");
      jLabelMostrarNombreb.setText("");
      jLabelMostrarNombrec.setText("");
      jLabelMostrarNombred.setText("");;
-     jLabelMostrarNombree.setText("");
+     jLabelMostrarNombree.setText("");*/
     }//GEN-LAST:event_jButtonRESETActionPerformed
 
     private void jButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSEARCHActionPerformed
-       
+      if (jTextFieldbuscar.getText().isEmpty()){
+      String o=jLabelTitulo1.getText();
+           if (o=="Your name:") {   
+           JOptionPane.showMessageDialog(this,"Please do not leave empty spaces.","Message",WARNING_MESSAGE);
+           }else{
+           JOptionPane.showMessageDialog(this,"Favor No dejar espacios vacios.","Mensaje",WARNING_MESSAGE);    
+           }
+           
+      }else{
       letraf="";
       letrabuscar=0;
       Letra=' ';letra=Letra;
@@ -462,11 +475,14 @@ jButtonSHOW.setBackground(Color.red);*/
        jLabelLetra.setText("");
        letraf="";  
       
-       
        letrabuscar=Integer.parseInt(jTextFieldbuscar.getText());
-            buscar(Nombre);
-        letraf=Character.toString(Buscarletra [(letrabuscar-1)]);    
+       buscar(Nombre);
+       letraf=Character.toString(Buscarletra [(letrabuscar-1)]);
+       if (Buscarletra [(letrabuscar-1)]==' '){
+       jLabelLetra.setText("_");
+       }else{
        jLabelLetra.setText(letraf);
+       }
       if (Character.isUpperCase(Buscarletra [(letrabuscar-1)])){
           jButtonMAY.setEnabled(false);
            jButtonMIN.setEnabled(true);
@@ -474,11 +490,9 @@ jButtonSHOW.setBackground(Color.red);*/
           jButtonMIN.setEnabled(false);
            jButtonMAY.setEnabled(true);
       }
-       
-       
-       
+     
     }//GEN-LAST:event_jButtonSEARCHActionPerformed
-
+    }
     private void jButtonESPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonESPActionPerformed
         jLabelTitulo1.setText("Tu nombre:");// TODO add your handling code here:
         jLabelSubTitulo.setText("Tu nombre es:");// TODO add your handling code here:
@@ -519,10 +533,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonENG.setEnabled(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonENGActionPerformed
 
-    private void jTextFieldbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldbuscarActionPerformed
-
-    }//GEN-LAST:event_jTextFieldbuscarActionPerformed
-
     private void jButtonMAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMAYActionPerformed
            
         String M = letraf.toUpperCase();
@@ -537,6 +547,10 @@ jButtonSHOW.setBackground(Color.red);*/
            jButtonMAY.setEnabled(true);
       
     }//GEN-LAST:event_jButtonMINActionPerformed
+
+    private void jTextFieldbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldbuscarKeyReleased
+
+    }//GEN-LAST:event_jTextFieldbuscarKeyReleased
 
     /**
      * @param args the command line arguments
