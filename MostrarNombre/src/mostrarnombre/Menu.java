@@ -459,7 +459,8 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jButtonRESETActionPerformed
 
     private void jButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSEARCHActionPerformed
-      if (jTextFieldbuscar.getText().isEmpty()){
+      
+        if (jTextFieldbuscar.getText().isEmpty()){
       String o=jLabelTitulo1.getText();
            if (o=="Your name:") {   
            JOptionPane.showMessageDialog(this,"Please do not leave empty spaces.","Message",WARNING_MESSAGE);
@@ -480,9 +481,12 @@ jButtonSHOW.setBackground(Color.red);*/
        letraf=Character.toString(Buscarletra [(letrabuscar-1)]);
        if (Buscarletra [(letrabuscar-1)]==' '){
        jLabelLetra.setText("_");
+        jButtonMIN.setEnabled(false);
+        jButtonMAY.setEnabled(false);       
        }else{
        jLabelLetra.setText(letraf);
        }
+
       if (Character.isUpperCase(Buscarletra [(letrabuscar-1)])){
           jButtonMAY.setEnabled(false);
            jButtonMIN.setEnabled(true);
@@ -534,17 +538,29 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jButtonENGActionPerformed
 
     private void jButtonMAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMAYActionPerformed
-           
+       if (Buscarletra [(letrabuscar-1)]==' '){
+       jLabelLetra.setText("_");
+        jButtonMIN.setEnabled(false);
+        jButtonMAY.setEnabled(false);       
+       }else{
         String M = letraf.toUpperCase();
            jLabelLetra.setText(M);
           jButtonMAY.setEnabled(false);
            jButtonMIN.setEnabled(true);
+       }
+
     }//GEN-LAST:event_jButtonMAYActionPerformed
     private void jButtonMINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMINActionPerformed
+       if (Buscarletra [(letrabuscar-1)]==' '){
+       jLabelLetra.setText("_");
+        jButtonMIN.setEnabled(false);
+        jButtonMAY.setEnabled(false);       
+       }else{
         String N = letraf.toLowerCase();
            jLabelLetra.setText(N);
           jButtonMIN.setEnabled(false);
            jButtonMAY.setEnabled(true);
+       }
       
     }//GEN-LAST:event_jButtonMINActionPerformed
 
