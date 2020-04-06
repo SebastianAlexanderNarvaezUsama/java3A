@@ -54,11 +54,10 @@
                       <Component id="jPanelPantalla2" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jLabelTitulo1" min="-2" pref="313" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jButtonESP" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButtonENG" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="73" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jButtonRESET" alignment="0" max="32767" attributes="0"/>
                       <Component id="jButtonSHOW" max="32767" attributes="0"/>
@@ -72,18 +71,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabelTitulo1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="7" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jButtonESP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButtonENG" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButtonENG" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jTextFieldNombre" min="-2" max="-2" attributes="0"/>
@@ -415,7 +414,7 @@
                                   <Component id="jLabelTitulo2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jTextFieldbuscar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButtonSEARCH" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
@@ -425,7 +424,7 @@
                                           <Component id="jButtonMAY" min="-2" pref="30" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jButtonMIN" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="39" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabelLetra" max="32767" attributes="0"/>
                                   </Group>
@@ -456,6 +455,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldbuscarActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonSEARCH">
                   <Properties>
@@ -503,6 +505,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMAYActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonMIN">
                   <Properties>
@@ -519,6 +524,9 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMINActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
