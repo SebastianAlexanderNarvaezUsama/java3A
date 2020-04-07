@@ -44,8 +44,10 @@ jButtonSHOW.setBackground(Color.red);*/
       jButtonSEARCH.setEnabled(true);  
       jButtonSHOW.setEnabled(true);
       jButtonMAY.setEnabled(false);  
-      jButtonMIN.setEnabled(false);  
+      jButtonMIN.setEnabled(false);
+      
     }else{
+        
       jButtonRESET.setEnabled(false);  
       jButtonSEARCH.setEnabled(false);  
       jButtonSHOW.setEnabled(false);  
@@ -124,6 +126,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jLabelTitulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("String_Manager");
 
         jPanelPantalla1.setBackground(new java.awt.Color(255, 255, 255));
         jPanelPantalla1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -131,6 +134,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonESP.setBackground(new java.awt.Color(0, 0, 204));
         jButtonESP.setForeground(new java.awt.Color(255, 255, 255));
         jButtonESP.setText("ESP");
+        jButtonESP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonESP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonESPActionPerformed(evt);
@@ -140,6 +144,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonENG.setBackground(new java.awt.Color(247, 148, 0));
         jButtonENG.setForeground(new java.awt.Color(255, 255, 255));
         jButtonENG.setText("ENG");
+        jButtonENG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonENG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonENGActionPerformed(evt);
@@ -157,12 +162,16 @@ jButtonSHOW.setBackground(Color.red);*/
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextFieldNombreKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldNombreKeyTyped(evt);
+            }
         });
 
         jButtonSHOW.setBackground(new java.awt.Color(212, 0, 0));
         jButtonSHOW.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonSHOW.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSHOW.setText("SHOW");
+        jButtonSHOW.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonSHOW.setFocusPainted(false);
         jButtonSHOW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +183,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonRESET.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonRESET.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRESET.setText("RESET");
+        jButtonRESET.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonRESET.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRESETActionPerformed(evt);
@@ -221,11 +231,15 @@ jButtonSHOW.setBackground(Color.red);*/
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextFieldbuscarKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldbuscarKeyTyped(evt);
+            }
         });
 
         jButtonSEARCH.setBackground(new java.awt.Color(204, 255, 0));
         jButtonSEARCH.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonSEARCH.setText("SEARCH");
+        jButtonSEARCH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonSEARCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSEARCHActionPerformed(evt);
@@ -236,10 +250,12 @@ jButtonSHOW.setBackground(Color.red);*/
         jLabelLetra.setFont(new java.awt.Font("Times New Roman", 1, 60)); // NOI18N
         jLabelLetra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLetra.setText("?");
+        jLabelLetra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButtonMAY.setBackground(new java.awt.Color(0, 0, 204));
         jButtonMAY.setForeground(new java.awt.Color(255, 255, 255));
         jButtonMAY.setText("MAY");
+        jButtonMAY.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonMAY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonMAYActionPerformed(evt);
@@ -249,6 +265,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonMIN.setBackground(new java.awt.Color(255, 153, 0));
         jButtonMIN.setForeground(new java.awt.Color(255, 255, 255));
         jButtonMIN.setText("MIN");
+        jButtonMIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonMIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonMINActionPerformed(evt);
@@ -266,9 +283,9 @@ jButtonSHOW.setBackground(Color.red);*/
                     .addGroup(jPanelPantalla3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jTextFieldbuscar, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jButtonSEARCH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(jLabelLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelPantalla3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonMAY, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(jButtonMIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -310,7 +327,7 @@ jButtonSHOW.setBackground(Color.red);*/
                             .addComponent(jLabelSubTitulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelSubTitulo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelSubTitulo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelSubTitulo4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelSubTitulo4, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                             .addComponent(jLabelSubTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelPantalla2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -365,9 +382,9 @@ jButtonSHOW.setBackground(Color.red);*/
                     .addGroup(jPanelPantalla1Layout.createSequentialGroup()
                         .addComponent(jLabelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonESP, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonENG, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonESP, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonENG, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButtonRESET, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonSHOW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextFieldNombre))
@@ -412,7 +429,7 @@ jButtonSHOW.setBackground(Color.red);*/
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSHOWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSHOWActionPerformed
-     
+ 
      if (!jTextFieldNombre.getText().isEmpty()){
       Nombre=jTextFieldNombre.getText();
      jLabelMostrarNombrea.setText(Nombre);
@@ -455,7 +472,14 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jButtonRESETActionPerformed
 
     private void jButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSEARCHActionPerformed
-      
+    if (jLabelMostrarNombrea.getText()=="") {
+       String o=jLabelTitulo1.getText();
+     if (o=="Your name:") { 
+           JOptionPane.showMessageDialog(this,"You must enter a name by pressing the \"show\" button.","Message",WARNING_MESSAGE);
+           }else{
+           JOptionPane.showMessageDialog(this,"Debe ingresar un nombre precionando el boton \"mostrar\".","Mensaje",WARNING_MESSAGE);    
+           }
+    }
         if (jTextFieldbuscar.getText().isEmpty()){
       String o=jLabelTitulo1.getText();
            if (o=="Your name:") {   
@@ -518,7 +542,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jLabelSubTitulo.setText("Your name is:");// TODO add your handling code here:
         jLabelSubTitulo1.setText("Your name in MAY:");// TODO add your handling code here:
         jLabelSubTitulo2.setText("Your name in MIN:");// TODO add your handling code here:
-        jLabelSubTitulo3.setText("Total characters ::");// TODO add your handling code here:
+        jLabelSubTitulo3.setText("Total characters :");// TODO add your handling code here:
         jLabelSubTitulo4.setText("Initial caption letters :");// TODO add your handling code here:
         jLabelTitulo2.setText("Type a number:");// TODO add your handling code here:
         jButtonSHOW.setText("SHOW");
@@ -530,7 +554,8 @@ jButtonSHOW.setBackground(Color.red);*/
         jPanelPantalla3.setBackground(new java.awt.Color(255, 255, 255));
         jPanelPantalla3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Letter finder", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
         jButtonESP.setEnabled(true);
-        jButtonENG.setEnabled(false);        // TODO add your handling code here:
+        jButtonENG.setEnabled(false);
+               // TODO add your handling code here:
     }//GEN-LAST:event_jButtonENGActionPerformed
 
     private void jButtonMAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMAYActionPerformed
@@ -563,6 +588,34 @@ jButtonSHOW.setBackground(Color.red);*/
     private void jTextFieldbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldbuscarKeyReleased
 
     }//GEN-LAST:event_jTextFieldbuscarKeyReleased
+
+    private void jTextFieldNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreKeyTyped
+    char validar = evt.getKeyChar();
+    if(Character.isDigit(validar)){
+     getToolkit().beep();
+     evt.consume();
+     String o=jLabelTitulo1.getText();
+     if (o=="Your name:") {   
+           JOptionPane.showMessageDialog(this,"Please just enter letters.","Message",WARNING_MESSAGE);
+           }else{
+           JOptionPane.showMessageDialog(this,"Favor solo ingresar letras.","Mensaje",WARNING_MESSAGE);    
+           }
+    }
+    }//GEN-LAST:event_jTextFieldNombreKeyTyped
+
+    private void jTextFieldbuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldbuscarKeyTyped
+    char validar = evt.getKeyChar();
+    if(Character.isLetter(validar)){
+     getToolkit().beep();
+     evt.consume();
+     String o=jLabelTitulo1.getText();
+     if (o=="Your name:") {   
+           JOptionPane.showMessageDialog(this,"Please just enter numbers.","Message",WARNING_MESSAGE);
+           }else{
+           JOptionPane.showMessageDialog(this,"Favor solo ingresar numeros.","Mensaje",WARNING_MESSAGE);    
+           }
+    }    // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldbuscarKeyTyped
 
     /**
      * @param args the command line arguments
