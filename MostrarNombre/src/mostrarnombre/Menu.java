@@ -131,7 +131,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonESP.setBackground(new java.awt.Color(0, 0, 204));
         jButtonESP.setForeground(new java.awt.Color(255, 255, 255));
         jButtonESP.setText("ESP");
-        jButtonESP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonESP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonESPActionPerformed(evt);
@@ -141,7 +140,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonENG.setBackground(new java.awt.Color(247, 148, 0));
         jButtonENG.setForeground(new java.awt.Color(255, 255, 255));
         jButtonENG.setText("ENG");
-        jButtonENG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonENG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonENGActionPerformed(evt);
@@ -165,7 +163,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonSHOW.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonSHOW.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSHOW.setText("SHOW");
-        jButtonSHOW.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3)));
         jButtonSHOW.setFocusPainted(false);
         jButtonSHOW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +174,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonRESET.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonRESET.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRESET.setText("RESET");
-        jButtonRESET.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3)));
         jButtonRESET.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRESETActionPerformed(evt);
@@ -230,7 +226,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonSEARCH.setBackground(new java.awt.Color(204, 255, 0));
         jButtonSEARCH.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonSEARCH.setText("SEARCH");
-        jButtonSEARCH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonSEARCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSEARCHActionPerformed(evt);
@@ -245,7 +240,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonMAY.setBackground(new java.awt.Color(0, 0, 204));
         jButtonMAY.setForeground(new java.awt.Color(255, 255, 255));
         jButtonMAY.setText("MAY");
-        jButtonMAY.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonMAY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonMAYActionPerformed(evt);
@@ -255,7 +249,6 @@ jButtonSHOW.setBackground(Color.red);*/
         jButtonMIN.setBackground(new java.awt.Color(255, 153, 0));
         jButtonMIN.setForeground(new java.awt.Color(255, 255, 255));
         jButtonMIN.setText("MIN");
-        jButtonMIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButtonMIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonMINActionPerformed(evt);
@@ -387,7 +380,7 @@ jButtonSHOW.setBackground(Color.red);*/
                     .addGroup(jPanelPantalla1Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jLabelTitulo1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPantalla1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelPantalla1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -419,6 +412,7 @@ jButtonSHOW.setBackground(Color.red);*/
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSHOWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSHOWActionPerformed
+     
      if (!jTextFieldNombre.getText().isEmpty()){
       Nombre=jTextFieldNombre.getText();
      jLabelMostrarNombrea.setText(Nombre);
@@ -450,7 +444,9 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jTextFieldNombreKeyReleased
 
     private void jButtonRESETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRESETActionPerformed
-     jTextFieldNombre.setText("");/*
+     jTextFieldNombre.setText("");
+     Botones();
+     /*
      jLabelMostrarNombrea.setText("");
      jLabelMostrarNombreb.setText("");
      jLabelMostrarNombrec.setText("");
