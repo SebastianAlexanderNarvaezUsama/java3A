@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mostrarnombre;
 
 import javax.swing.JOptionPane;
@@ -12,10 +8,7 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
 
 
-/**
- *
- * @author Asus
- */
+
 public class Menu extends javax.swing.JFrame {
 String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
  int contador=0,conspa=0,fin=0,buscar=0,i;
@@ -429,7 +422,7 @@ jButtonSHOW.setBackground(Color.red);*/
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSHOWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSHOWActionPerformed
- 
+     jTextFieldbuscar.setText(""); 
      if (!jTextFieldNombre.getText().isEmpty()){
       Nombre=jTextFieldNombre.getText();
      jLabelMostrarNombrea.setText(Nombre);
@@ -442,6 +435,7 @@ jButtonSHOW.setBackground(Color.red);*/
      jLabelMostrarNombree.setText(Completo);
      i=0;Completo="";fin=0;conspa=0;contador=0;
     }else{
+     jTextFieldbuscar.setText("");
      jTextFieldNombre.setText("");
      jLabelMostrarNombrea.setText("");
      jLabelMostrarNombreb.setText("");
@@ -457,29 +451,39 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jTextFieldNombreActionPerformed
 
     private void jTextFieldNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreKeyReleased
-    Botones();        // TODO add your handling code here:
+    Botones();
+    // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNombreKeyReleased
 
     private void jButtonRESETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRESETActionPerformed
      jTextFieldNombre.setText("");
      Botones();
-     /*
+    Nombre="";
+    Mayus="";
+    Minus="";Completo=Nombre;
+    letraf="";
+    contador=0;
+    conspa=0;
+    fin=0;
+    buscar=0;
+    i=0;
+    letrabuscar=0;
+    Letra=' ';
+    letra=Letra;
+    may=' ';
+    letrainicial=0;
+    x=0;     
      jLabelMostrarNombrea.setText("");
      jLabelMostrarNombreb.setText("");
      jLabelMostrarNombrec.setText("");
-     jLabelMostrarNombred.setText("");;
-     jLabelMostrarNombree.setText("");*/
+     jLabelMostrarNombred.setText("");
+     jLabelMostrarNombree.setText("");
+     jLabelLetra.setText("?");
+     jTextFieldbuscar.setText("");
     }//GEN-LAST:event_jButtonRESETActionPerformed
 
     private void jButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSEARCHActionPerformed
-    if (jLabelMostrarNombrea.getText()=="") {
-       String o=jLabelTitulo1.getText();
-     if (o=="Your name:") { 
-           JOptionPane.showMessageDialog(this,"You must enter a name by pressing the \"show\" button.","Message",WARNING_MESSAGE);
-           }else{
-           JOptionPane.showMessageDialog(this,"Debe ingresar un nombre precionando el boton \"mostrar\".","Mensaje",WARNING_MESSAGE);    
-           }
-    }
+      
         if (jTextFieldbuscar.getText().isEmpty()){
       String o=jLabelTitulo1.getText();
            if (o=="Your name:") {   
@@ -499,13 +503,17 @@ jButtonSHOW.setBackground(Color.red);*/
        letrabuscar=Integer.parseInt(jTextFieldbuscar.getText());
        buscar(Nombre);
        letraf=Character.toString(Buscarletra [(letrabuscar-1)]);
+
        if (Buscarletra [(letrabuscar-1)]==' '){
        jLabelLetra.setText("_");
         jButtonMIN.setEnabled(false);
         jButtonMAY.setEnabled(false);       
-       }else{
+       }else 
+       if (jLabelMostrarNombrea.getText()==""){
+        jLabelLetra.setText("");}else{
        jLabelLetra.setText(letraf);
        }
+
 
       if (Character.isUpperCase(Buscarletra [(letrabuscar-1)])){
           jButtonMAY.setEnabled(false);
@@ -542,7 +550,7 @@ jButtonSHOW.setBackground(Color.red);*/
         jLabelSubTitulo.setText("Your name is:");// TODO add your handling code here:
         jLabelSubTitulo1.setText("Your name in MAY:");// TODO add your handling code here:
         jLabelSubTitulo2.setText("Your name in MIN:");// TODO add your handling code here:
-        jLabelSubTitulo3.setText("Total characters :");// TODO add your handling code here:
+        jLabelSubTitulo3.setText("Total characters ::");// TODO add your handling code here:
         jLabelSubTitulo4.setText("Initial caption letters :");// TODO add your handling code here:
         jLabelTitulo2.setText("Type a number:");// TODO add your handling code here:
         jButtonSHOW.setText("SHOW");
@@ -590,7 +598,7 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jTextFieldbuscarKeyReleased
 
     private void jTextFieldNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreKeyTyped
-    char validar = evt.getKeyChar();
+char validar = evt.getKeyChar();
     if(Character.isDigit(validar)){
      getToolkit().beep();
      evt.consume();
@@ -601,9 +609,19 @@ jButtonSHOW.setBackground(Color.red);*/
            JOptionPane.showMessageDialog(this,"Favor solo ingresar letras.","Mensaje",WARNING_MESSAGE);    
            }
     }
+    
     }//GEN-LAST:event_jTextFieldNombreKeyTyped
 
     private void jTextFieldbuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldbuscarKeyTyped
+    if (jLabelMostrarNombrea.getText()=="") { 
+      String o=jLabelTitulo1.getText();
+           if (o=="Your name:") { 
+           JOptionPane.showMessageDialog(this,"You must enter a name by pressing the \"show\" button.","Message",WARNING_MESSAGE);
+        }else{
+           JOptionPane.showMessageDialog(this,"Debe ingresar un nombre precionando el boton \"mostrar\".","Mensaje",WARNING_MESSAGE);
+          
+       }
+    }
     char validar = evt.getKeyChar();
     if(Character.isLetter(validar)){
      getToolkit().beep();
