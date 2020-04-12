@@ -1,6 +1,7 @@
 
 package mostrarnombre;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
@@ -21,6 +22,7 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/mostrarnombre/Logo.png")).getImage());
         jButtonENG.setEnabled(false);
         jButtonMAY.setEnabled(false);  
         jButtonMIN.setEnabled(false);  
@@ -87,7 +89,47 @@ jButtonSHOW.setBackground(Color.red);*/
     letraf+=letra;
     return letraf; // TODO code application logic here
     }
-     
+     public void buscar(){
+                 if (jTextFieldbuscar.getText().isEmpty()){
+      String o=jLabelTitulo1.getText();
+           if (o=="Your name:") {   
+           JOptionPane.showMessageDialog(this,"Please do not leave empty spaces.","Message",WARNING_MESSAGE);
+           }else{
+           JOptionPane.showMessageDialog(this,"Favor No dejar espacios vacios.","Mensaje",WARNING_MESSAGE);    
+           }
+           
+      }else{
+      letraf="";
+      letrabuscar=0;
+      Letra=' ';letra=Letra;
+      letrainicial=0;x=letrabuscar;
+       jLabelLetra.setText("");
+       letraf="";  
+      
+       letrabuscar=Integer.parseInt(jTextFieldbuscar.getText());
+       buscar(Nombre);
+       letraf=Character.toString(Buscarletra [(letrabuscar-1)]);
+
+       if (Buscarletra [(letrabuscar-1)]==' '){
+       jLabelLetra.setText("_");
+        jButtonMIN.setEnabled(false);
+        jButtonMAY.setEnabled(false);       
+       }else 
+       if (jLabelMostrarNombrea.getText()==""){
+        jLabelLetra.setText("");}else{
+       jLabelLetra.setText(letraf);
+       }
+
+
+      if (Character.isUpperCase(Buscarletra [(letrabuscar-1)])){
+          jButtonMAY.setEnabled(false);
+           jButtonMIN.setEnabled(true);
+      }else{
+          jButtonMIN.setEnabled(false);
+           jButtonMAY.setEnabled(true);
+      }
+                 }
+     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -483,8 +525,9 @@ jButtonSHOW.setBackground(Color.red);*/
     }//GEN-LAST:event_jButtonRESETActionPerformed
 
     private void jButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSEARCHActionPerformed
-      
-        if (jTextFieldbuscar.getText().isEmpty()){
+
+        buscar();
+        /*if (jTextFieldbuscar.getText().isEmpty()){
       String o=jLabelTitulo1.getText();
            if (o=="Your name:") {   
            JOptionPane.showMessageDialog(this,"Please do not leave empty spaces.","Message",WARNING_MESSAGE);
@@ -521,10 +564,11 @@ jButtonSHOW.setBackground(Color.red);*/
       }else{
           jButtonMIN.setEnabled(false);
            jButtonMAY.setEnabled(true);
-      }
      
+      }
+    */ 
     }//GEN-LAST:event_jButtonSEARCHActionPerformed
-    }
+    
     private void jButtonESPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonESPActionPerformed
         jLabelTitulo1.setText("Tu nombre:");// TODO add your handling code here:
         jLabelSubTitulo.setText("Tu nombre es:");// TODO add your handling code here:
