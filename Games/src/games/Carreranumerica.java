@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
  */
 public class Carreranumerica extends javax.swing.JFrame {
     String Playerstex="";//Numero de jugadores seleccionado por el usuario
-    int Players=1;//Numero de jugadores
+    int Players=0;//Numero de jugadores
     int D1,D2;//Dados
     
     /**
@@ -374,19 +374,6 @@ public class Carreranumerica extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLAYActionPerformed
-       jButtonROLLDICE.setEnabled(true);
-       jComboBox1.setEnabled(true);
-       jButtonTRYAGAIN.setEnabled(true);
-    }//GEN-LAST:event_jButtonPLAYActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        Playerstex = jComboBox1.getSelectedItem().toString();
-        Players = Integer.parseInt(Playerstex);
-        System.out.println(Players);   
-        jComboBox1.setEnabled(false); 
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jButtonROLLDICEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonROLLDICEActionPerformed
      jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados.gif")));
      jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados.gif")));
@@ -433,6 +420,21 @@ public class Carreranumerica extends javax.swing.JFrame {
     private void jButtonTRYAGAINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTRYAGAINActionPerformed
      inicio();
     }//GEN-LAST:event_jButtonTRYAGAINActionPerformed
+
+    private void jButtonPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLAYActionPerformed
+       jComboBox1.setEnabled(true);
+       jButtonTRYAGAIN.setEnabled(true);    
+    }//GEN-LAST:event_jButtonPLAYActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        Playerstex = jComboBox1.getSelectedItem().toString();
+        Players = Integer.parseInt(Playerstex);
+        System.out.println(Players);   
+        jComboBox1.setEnabled(false); 
+        if(Players==1 || Players==2 || Players==3 || Players==4){
+        jButtonROLLDICE.setEnabled(true);
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
