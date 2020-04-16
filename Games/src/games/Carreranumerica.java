@@ -431,7 +431,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         Players = Integer.parseInt(Playerstex);
         System.out.println(Players);   
         jComboBox1.setEnabled(false); 
-        if(Players==1 || Players==2 || Players==3 || Players==4){
+        if(Players!=0){
         jButtonROLLDICE.setEnabled(true);
         } // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
