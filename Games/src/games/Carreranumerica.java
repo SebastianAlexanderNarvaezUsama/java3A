@@ -28,7 +28,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         inicio();
     }
     public void inicio(){
-       setIconImage(new ImageIcon(getClass().getResource("/Icons/iconmel.png")).getImage());
+       setIconImage(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")).getImage());
        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
        jButtonROLLDICE.setEnabled(false);
@@ -37,19 +37,51 @@ public class Carreranumerica extends javax.swing.JFrame {
        jButtonTRYAGAIN.setEnabled(false);  
     }
     public void dados(){
-        if(D1==1){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));}
-        else if(D1==2){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));}
-        else if(D1==3){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));}
-        else if(D1==4){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));}
-        else if(D1==5){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));}
-        else if(D1==6){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));}
+        switch (D1) {
+            case 1:
+                jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
+                break;
+            case 2:
+                jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));
+                break;
+            case 3:
+                jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));
+                break;
+            case 4:
+                jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));
+                break;
+            case 5:
+                jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));
+                break;
+            case 6:
+                jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));
+                break;
+            default:
+                break;
+        }
        
-        if(D2==1){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));}
-        else if(D2==2){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));}
-        else if(D2==3){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));}
-        else if(D2==4){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));}
-        else if(D2==5){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));}
-        else if(D2==6){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));}    
+        switch (D2) {
+            case 1:
+                jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
+                break;
+            case 2:
+                jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));    
+                break;
+            case 3:
+                jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));
+                break;
+            case 4:
+                jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));
+                break;
+            case 5:
+                jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));
+                break;
+            case 6:
+                jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));
+                break;
+            default:
+                break;
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
