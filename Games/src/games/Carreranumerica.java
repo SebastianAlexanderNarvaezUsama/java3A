@@ -18,7 +18,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     String Playerstex="";//Numero de jugadores seleccionado por el usuario
     int Players=0;//Numero de jugadores
     int D1,D2;//Dados
-    
+    int i;//contador de icos
     /**
      * Creates new form Carreranumerica
      */
@@ -35,6 +35,21 @@ public class Carreranumerica extends javax.swing.JFrame {
        jButtonSTOP.setEnabled(false);
        jComboBox1.setEnabled(false);  
        jButtonTRYAGAIN.setEnabled(false);  
+    }
+    public void dados(){
+        if(D1==1){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));}
+        else if(D1==2){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));}
+        else if(D1==3){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));}
+        else if(D1==4){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));}
+        else if(D1==5){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));}
+        else if(D1==6){jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));}
+       
+        if(D2==1){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));}
+        else if(D2==2){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));}
+        else if(D2==3){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));}
+        else if(D2==4){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));}
+        else if(D2==5){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));}
+        else if(D2==6){jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));}    
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -382,37 +397,10 @@ public class Carreranumerica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonROLLDICEActionPerformed
 
     private void jButtonSTOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSTOPActionPerformed
-              Random n=new Random();
+        Random n=new Random();
         D1=(int)(n.nextDouble()*6+1);
-        D2=(int)(n.nextDouble()*6+1);
-        //Scanner read = new Scanner(System.in);
-        if(D1==1){
-        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
-        }else if(D1==2){
-        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));
-        }else if(D1==3){
-        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));
-        }else if(D1==4){
-        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));
-        }else if(D1==5){
-        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));
-        }else if(D1==6){
-        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));
-        }
-        
-        if(D2==1){
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
-        }else if(D2==2){
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-2.png.png")));
-        }else if(D2==3){
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-3.png.png")));
-        }else if(D2==4){
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-4.png.png")));
-        }else if(D2==5){
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-5.png.png")));
-        }else if(D2==6){
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")));
-        }
+        D2=(int)(n.nextDouble()*6+1);        
+        dados();
         jButtonROLLDICE.setEnabled(true);
         jButtonSTOP.setEnabled(false);
     }//GEN-LAST:event_jButtonSTOPActionPerformed
