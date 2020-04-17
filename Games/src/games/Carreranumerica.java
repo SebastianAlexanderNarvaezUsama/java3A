@@ -27,14 +27,22 @@ public class Carreranumerica extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         inicio();
     }
+    public void value(){
+    Playerstex="";//Numero de jugadores seleccionado por el usuario
+    Players=0;//Numero de jugadores
+    D1=0;
+    D2=0;//Dados
+    i=0;//contador de icos
+    }
     public void inicio(){
-       setIconImage(new ImageIcon(getClass().getResource("/Icons/dados-6.png.png")).getImage());
-       jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
-       jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
+       setIconImage(new ImageIcon(getClass().getResource("/Icons/dados6.png")).getImage());
+        jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));
+        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));  
        jButtonROLLDICE.setEnabled(false);
        jButtonSTOP.setEnabled(false);
        jComboBox1.setEnabled(false);  
-       jButtonTRYAGAIN.setEnabled(false);  
+       jButtonTRYAGAIN.setEnabled(false);
+       
     }
     public void dados(){
         switch (D1) {
@@ -422,10 +430,11 @@ public class Carreranumerica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonROLLDICEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonROLLDICEActionPerformed
-     jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados.gif")));
-     jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados.gif")));
+     jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO3DV2.0.gif")));
+     jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO3DV2.0.gif")));
      jButtonSTOP.setEnabled(true);
      jButtonROLLDICE.setEnabled(false);
+     jButtonPLAY.setEnabled(false);
     }//GEN-LAST:event_jButtonROLLDICEActionPerformed
 
     private void jButtonSTOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSTOPActionPerformed
@@ -438,10 +447,14 @@ public class Carreranumerica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSTOPActionPerformed
 
     private void jButtonTRYAGAINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTRYAGAINActionPerformed
+     jButtonTRYAGAIN.setEnabled(false);
      inicio();
+     jButtonPLAY.setEnabled(true);
+     
     }//GEN-LAST:event_jButtonTRYAGAINActionPerformed
 
     private void jButtonPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLAYActionPerformed
+       value();
        jComboBox1.setEnabled(true);
        jButtonTRYAGAIN.setEnabled(true);    
     }//GEN-LAST:event_jButtonPLAYActionPerformed
