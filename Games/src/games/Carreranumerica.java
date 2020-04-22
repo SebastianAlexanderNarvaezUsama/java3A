@@ -12,9 +12,9 @@ import java.applet.AudioClip;
  */
 public class Carreranumerica extends javax.swing.JFrame {
     String Playerstex="",Leveltex="";//Numero de jugadores y nivel de dificultad seleccionados por el usuario
-    int Players=0,Level=0;//Numero de jugadores y nivel de dificultad
+    int Players=0,Level=0,Turn=0;//Numero de jugadores, nivel de dificultad y turno de jugador
     int D1,D2;//Dados
-    int i,P;//contador de icos y pares 
+    int i,P,A,x;//contador de icos, pares, acomulador 
     AudioClip DadosT=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Movimiento.wav"));
     AudioClip DadosS=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Tirar.wav"));
     public Carreranumerica() {
@@ -30,17 +30,24 @@ public class Carreranumerica extends javax.swing.JFrame {
     D1=0;//Dado1
     D2=0;//Dado2
     i=0;//contador de icos
+    P=0;//Contador de pares
+    A=0;//Acomulador puntaje
+    Turn=1;
+    x=0;
     }
     public void inicio(){
+
        setIconImage(new ImageIcon(getClass().getResource("/Icons/dados6.png")).getImage());
         jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));
-        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));  
-       jButtonROLLDICE.setEnabled(false);
-       jButtonSTOP.setEnabled(false);
-       jComboBox1.setEnabled(false);  
-       jComboBox2.setEnabled(false);  
-       jButtonTRYAGAIN.setEnabled(false);
-       jLabel6.setText("");
+        jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));
+        jLabelIcoCar.setIcon(new ImageIcon(getClass().getResource("/Icons/Car.gif")));
+        jButtonROLLDICE.setEnabled(false);
+        jButtonSTOP.setEnabled(false);
+        jComboBox1.setEnabled(false);  
+        jComboBox2.setEnabled(false);  
+        jButtonTRYAGAIN.setEnabled(false);
+         jLabel6.setText("");
+       
     }
     public void dados(){
         switch (D1) {
@@ -91,6 +98,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         if(D1==D2){
             P++;
         }
+        A=(D1+D2)+A;
     }
   
     @SuppressWarnings("unchecked")
@@ -98,6 +106,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     private void initComponents() {
 
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelTitulo1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -106,7 +115,6 @@ public class Carreranumerica extends javax.swing.JFrame {
         jButtonPLAY = new javax.swing.JButton();
         jButtonROLLDICE = new javax.swing.JButton();
         jButtonSTOP = new javax.swing.JButton();
-        jButtonTRYAGAIN = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabelTitulo2 = new javax.swing.JLabel();
@@ -125,9 +133,15 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabelTitulo3 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabelIcoCar = new javax.swing.JLabel();
+        jButtonTRYAGAIN = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabelNumeroJugador4 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jLabel8.setText("jLabel8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Number race");
@@ -138,7 +152,9 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabelTitulo1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTitulo1.setText("NUMBER RACE");
+        jLabelTitulo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Tittle.gif"))); // NOI18N
+        jLabelTitulo1.setRequestFocusEnabled(false);
+        jLabelTitulo1.setVerifyInputWhenFocusTarget(false);
 
         jPanel2.setBackground(new java.awt.Color(9, 0, 88));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Dices", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -188,17 +204,6 @@ public class Carreranumerica extends javax.swing.JFrame {
             }
         });
 
-        jButtonTRYAGAIN.setBackground(new java.awt.Color(102, 102, 255));
-        jButtonTRYAGAIN.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jButtonTRYAGAIN.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonTRYAGAIN.setText("TRY AGAIN?");
-        jButtonTRYAGAIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jButtonTRYAGAIN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTRYAGAINActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -217,8 +222,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jButtonPLAY, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonTRYAGAIN))
+                        .addGap(157, 157, 157))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabelD1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -246,9 +250,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                         .addComponent(jButtonSTOP, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonPLAY, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonTRYAGAIN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButtonPLAY, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -364,7 +366,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/iconmel.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/iconmel.gif"))); // NOI18N
 
         jLabelTitulo3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabelTitulo3.setForeground(new java.awt.Color(255, 255, 255));
@@ -381,18 +383,36 @@ public class Carreranumerica extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Config.gif"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(9, 5, 73), 2));
+        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        jLabelIcoCar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Car.gif"))); // NOI18N
+        jLabelIcoCar.setPreferredSize(new java.awt.Dimension(32, 32));
+
+        jButtonTRYAGAIN.setBackground(new java.awt.Color(102, 102, 255));
+        jButtonTRYAGAIN.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jButtonTRYAGAIN.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonTRYAGAIN.setText("TRY AGAIN?");
+        jButtonTRYAGAIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButtonTRYAGAIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTRYAGAINActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Next player: ");
+
+        jLabelNumeroJugador4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabelNumeroJugador4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNumeroJugador4.setText("#");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(568, 568, 568)
-                .addComponent(jButton1))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,24 +428,45 @@ public class Carreranumerica extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(jLabelNumeroJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabelNumeroJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabelNumeroJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addComponent(jLabel7)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonTRYAGAIN))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(207, 207, 207)
+                            .addComponent(jLabelIcoCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel7)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jButton1)
-                .addGap(8, 8, 8)
-                .addComponent(jLabelTitulo1)
-                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelTitulo1)
+                            .addComponent(jLabelIcoCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,15 +482,23 @@ public class Carreranumerica extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabelNumeroJugador))))
+                            .addComponent(jLabelNumeroJugador)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabelNumeroJugador4))))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonTRYAGAIN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -476,18 +525,33 @@ public class Carreranumerica extends javax.swing.JFrame {
      jButtonROLLDICE.setEnabled(false);
      jButtonPLAY.setEnabled(false);
      DadosT.loop();  
+     if(Turn<=Players-1){
+     jLabelNumeroJugador4.setText(Integer.toString(Turn+1));
+     }else if(Turn==Turn){
+        jLabelNumeroJugador4.setText(Integer.toString(Turn-1));
+     }
+     jLabelNumeroJugador.setText(Integer.toString(Turn));       
+        if(Turn<=Players-1){          
+            Turn++;
+        }else if(Turn==Players){
+              Turn=1;  
+        }
+     
     }//GEN-LAST:event_jButtonROLLDICEActionPerformed
 
     private void jButtonSTOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSTOPActionPerformed
         Random n=new Random();
         D1=(int)(n.nextDouble()*6+1);
         D2=(int)(n.nextDouble()*6+1);        
-        dados();       
+        dados();
+        
         jLabel6.setText(Integer.toString(D1+D2));
         jButtonROLLDICE.setEnabled(true);
         jButtonSTOP.setEnabled(false);
         DadosT.stop();  
-        DadosS.play();         
+        DadosS.play(); 
+        System.out.println(A);
+
     }//GEN-LAST:event_jButtonSTOPActionPerformed
 
     private void jButtonTRYAGAINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTRYAGAINActionPerformed
@@ -511,6 +575,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jComboBox1.setEnabled(false);
         if(Players!=0&&Level>=50){
         jButtonROLLDICE.setEnabled(true);
+        
         } 
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -575,12 +640,16 @@ public class Carreranumerica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelD1;
     private javax.swing.JLabel jLabelD2;
+    private javax.swing.JLabel jLabelIcoCar;
     private javax.swing.JLabel jLabelNumeroJugador;
     private javax.swing.JLabel jLabelNumeroJugador1;
     private javax.swing.JLabel jLabelNumeroJugador2;
     private javax.swing.JLabel jLabelNumeroJugador3;
+    private javax.swing.JLabel jLabelNumeroJugador4;
     private javax.swing.JLabel jLabelTitulo1;
     private javax.swing.JLabel jLabelTitulo2;
     private javax.swing.JLabel jLabelTitulo3;
