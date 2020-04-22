@@ -47,7 +47,10 @@ public class Carreranumerica extends javax.swing.JFrame {
         jComboBox2.setEnabled(false);  
         jButtonTRYAGAIN.setEnabled(false);
          jLabel6.setText("");
-       
+         jLabelNumeroJugador.setText("#");
+         jLabelNumeroJugador4.setText("#");
+         DadosT.stop();  
+         DadosS.stop(); 
     }
     public void dados(){
         switch (D1) {
@@ -366,7 +369,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/iconmel.gif"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/iconmel.png"))); // NOI18N
 
         jLabelTitulo3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabelTitulo3.setForeground(new java.awt.Color(255, 255, 255));
@@ -388,7 +391,6 @@ public class Carreranumerica extends javax.swing.JFrame {
         jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
 
         jLabelIcoCar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Car.gif"))); // NOI18N
-        jLabelIcoCar.setPreferredSize(new java.awt.Dimension(32, 32));
 
         jButtonTRYAGAIN.setBackground(new java.awt.Color(102, 102, 255));
         jButtonTRYAGAIN.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -448,7 +450,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(207, 207, 207)
-                            .addComponent(jLabelIcoCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelIcoCar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -464,7 +466,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelTitulo1)
-                            .addComponent(jLabelIcoCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabelIcoCar)))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,7 +530,7 @@ public class Carreranumerica extends javax.swing.JFrame {
      if(Turn<=Players-1){
      jLabelNumeroJugador4.setText(Integer.toString(Turn+1));
      }else if(Turn==Turn){
-        jLabelNumeroJugador4.setText(Integer.toString(Turn-1));
+        jLabelNumeroJugador4.setText(Integer.toString(1+Turn-Turn));
      }
      jLabelNumeroJugador.setText(Integer.toString(Turn));       
         if(Turn<=Players-1){          
