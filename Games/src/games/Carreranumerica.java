@@ -15,6 +15,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     int Players=0,Level=0,Turn=0;//Numero de jugadores, nivel de dificultad y turno de jugador
     int D1,D2;//Dados
     int i,P,A,x;//contador de icos, pares, acomulador 
+    int contador=0;
     AudioClip DadosT=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Movimiento.wav"));
     AudioClip DadosS=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Tirar.wav"));
     public Carreranumerica() {
@@ -34,6 +35,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     A=0;//Acomulador puntaje
     Turn=1;
     x=0;
+   
     }
     public void inicio(){
 
@@ -43,8 +45,8 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabelIcoCar.setIcon(new ImageIcon(getClass().getResource("/Icons/Car.gif")));
         jButtonROLLDICE.setEnabled(false);
         jButtonSTOP.setEnabled(false);
-        jComboBox1.setEnabled(false);  
-        jComboBox2.setEnabled(false);  
+        jComboBox1a.setEnabled(false);  
+        jComboBox2a.setEnabled(false);  
         jButtonTRYAGAIN.setEnabled(false);
          jLabel6.setText("");
          jLabelNumeroJugador.setText("#");
@@ -52,6 +54,7 @@ public class Carreranumerica extends javax.swing.JFrame {
          DadosT.stop();  
          DadosS.stop(); 
     }
+
     public void dados(){
         switch (D1) {
             case 1:
@@ -103,7 +106,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         }
         A=(D1+D2)+A;
     }
-  
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -119,7 +122,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jButtonROLLDICE = new javax.swing.JButton();
         jButtonSTOP = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1a = new javax.swing.JComboBox<>();
         jLabelTitulo2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabelNumeroJugador = new javax.swing.JLabel();
@@ -134,7 +137,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabelTitulo3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2a = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabelIcoCar = new javax.swing.JLabel();
         jButtonTRYAGAIN = new javax.swing.JButton();
@@ -151,6 +154,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(9, 0, 88));
+        jPanel1.setEnabled(false);
 
         jLabelTitulo1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +229,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jButtonPLAY, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(157, 157, 157))
+                        .addGap(172, 172, 172))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabelD1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -252,25 +256,25 @@ public class Carreranumerica extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSTOP, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonPLAY, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jComboBox1.setBackground(new java.awt.Color(0, 0, 102));
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jComboBox1.setName(""); // NOI18N
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox1a.setBackground(new java.awt.Color(0, 0, 102));
+        jComboBox1a.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jComboBox1a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        jComboBox1a.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jComboBox1a.setName(""); // NOI18N
+        jComboBox1a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBox1aActionPerformed(evt);
             }
         });
 
         jLabelTitulo2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabelTitulo2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo2.setText("Number of players:");
+        jLabelTitulo2.setText("Number of players :");
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -373,22 +377,27 @@ public class Carreranumerica extends javax.swing.JFrame {
 
         jLabelTitulo3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabelTitulo3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo3.setText("Level:");
+        jLabelTitulo3.setText("Difficulty level :");
 
-        jComboBox2.setBackground(new java.awt.Color(0, 0, 102));
-        jComboBox2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[150]" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jComboBox2.setName(""); // NOI18N
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox2a.setBackground(new java.awt.Color(0, 0, 102));
+        jComboBox2a.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jComboBox2a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[150]" }));
+        jComboBox2a.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jComboBox2a.setName(""); // NOI18N
+        jComboBox2a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBox2aActionPerformed(evt);
             }
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Config.gif"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(9, 5, 73), 2));
         jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabelIcoCar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Car.gif"))); // NOI18N
 
@@ -417,17 +426,17 @@ public class Carreranumerica extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelTitulo2)
-                        .addGap(4, 4, 4)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox1a, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jLabelTitulo3)
-                        .addGap(6, 6, 6)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(100, 100, 100)
+                        .addGap(30, 30, 30)
+                        .addComponent(jComboBox2a, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jLabelNumeroJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -468,26 +477,29 @@ public class Carreranumerica extends javax.swing.JFrame {
                             .addComponent(jLabelTitulo1)
                             .addComponent(jLabelIcoCar)))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTitulo2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTitulo3)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabelNumeroJugador)
                             .addComponent(jLabel9)
-                            .addComponent(jLabelNumeroJugador4))))
-                .addGap(6, 6, 6)
+                            .addComponent(jLabelNumeroJugador4)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabelTitulo2)
+                                .addGap(3, 3, 3))
+                            .addComponent(jComboBox1a, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabelTitulo3))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox2a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,7 +507,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                                 .addGap(170, 170, 170)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(60, 60, 60))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -565,25 +577,19 @@ public class Carreranumerica extends javax.swing.JFrame {
 
     private void jButtonPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLAYActionPerformed
        value();
-       jComboBox1.setEnabled(true);
-       jComboBox2.setEnabled(true);  
-       jButtonTRYAGAIN.setEnabled(true);    
+       jComboBox1a.setEnabled(true);
+       jComboBox2a.setEnabled(true);  
+       jButtonTRYAGAIN.setEnabled(true);
+       if(Config.jTextField1.getText().isEmpty()){
+           
+       }else{
+       Carreranumerica.jComboBox1a.addItem(Config.jTextField1.getText());
+       }
     }//GEN-LAST:event_jButtonPLAYActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        Playerstex = jComboBox1.getSelectedItem().toString();
-        Players = Integer.parseInt(Playerstex);
-       System.out.println(Players);
-        jComboBox1.setEnabled(false);
-        if(Players!=0&&Level>=50){
-        jButtonROLLDICE.setEnabled(true);
-        
-        } 
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        Leveltex = jComboBox2.getSelectedItem().toString();         
-        jComboBox2.setEnabled(false); 
+    private void jComboBox2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2aActionPerformed
+        Leveltex = jComboBox2a.getSelectedItem().toString();         
+        jComboBox2a.setEnabled(false); 
         switch (Leveltex){
         case "Basic[50]":Level=50;break;
         case "Intermediato[100]":Level=100;break;
@@ -592,7 +598,27 @@ public class Carreranumerica extends javax.swing.JFrame {
         if(Players!=0&&Level>=50){
         jButtonROLLDICE.setEnabled(true);
         } 
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_jComboBox2aActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
+       Config Config= new Config();        
+       Config.setVisible(true);      
+       this.setVisible(false);
+       //jButton1.setEnabled(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1aActionPerformed
+        
+        Playerstex = jComboBox1a.getSelectedItem().toString();
+        Players = Integer.parseInt(Playerstex);
+        System.out.println(Players);
+        jComboBox1a.setEnabled(false);
+        if(Players!=0&&Level>=50){
+        jButtonROLLDICE.setEnabled(true);
+        
+        }          // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1aActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -628,13 +654,13 @@ public class Carreranumerica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonPLAY;
+    public static javax.swing.JButton jButtonPLAY;
     private javax.swing.JButton jButtonROLLDICE;
     private javax.swing.JButton jButtonSTOP;
     private javax.swing.JButton jButtonTRYAGAIN;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public static javax.swing.JComboBox<String> jComboBox1a;
+    private javax.swing.JComboBox<String> jComboBox2a;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
