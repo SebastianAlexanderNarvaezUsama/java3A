@@ -11,11 +11,12 @@ import java.applet.AudioClip;
  * @author Sebastian Alexander Narvaez Usamá
  */
 public class Carreranumerica extends javax.swing.JFrame {
-    String Playerstex="",Leveltex="";//Numero de jugadores y nivel de dificultad seleccionados por el usuario
-    int Players=0,Level=0,Turn=0;//Numero de jugadores, nivel de dificultad y turno de jugador
+    String Playerstex="",Leveltex="",a,b,c,letraingresada,newc;//Numero de jugadores y nivel de dificultad seleccionados por el usuario
+    int Players=0,Level=0,Turn=0,newlevel;//Numero de jugadores, nivel de dificultad y turno de jugador
     int D1,D2;//Dados
     int i,P,A,x;//contador de icos, pares, acomulador 
     int contador=0;
+    char[] letra;
     AudioClip DadosT=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Movimiento.wav"));
     AudioClip DadosS=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Tirar.wav"));
     public Carreranumerica() {
@@ -54,7 +55,10 @@ public class Carreranumerica extends javax.swing.JFrame {
          DadosT.stop();  
          DadosS.stop(); 
     }
-
+    public void proc(){ 
+       a=Config.jTextField3.getText();
+       b=Config.jTextField2.getText();
+    }
     public void dados(){
         switch (D1) {
             case 1:
@@ -572,7 +576,8 @@ public class Carreranumerica extends javax.swing.JFrame {
      jButtonTRYAGAIN.setEnabled(false);
      inicio();
      jButtonPLAY.setEnabled(true);  
-     
+     jComboBox1a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+     jComboBox2a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[150]" }));
     }//GEN-LAST:event_jButtonTRYAGAINActionPerformed
 
     private void jButtonPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLAYActionPerformed
@@ -581,19 +586,15 @@ public class Carreranumerica extends javax.swing.JFrame {
        jComboBox2a.setEnabled(true);  
        jButtonTRYAGAIN.setEnabled(true);
        
-       if(Config.jTextField1.getText().isEmpty()){
+       if(!"".equals(b));
+       if(Config.jTextField1.getText().isEmpty()||Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
            
        }else{
        Carreranumerica.jComboBox1a.addItem(Config.jTextField1.getText());
-       }
-       
-       if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
-           
-       }else{
-       String a=Config.jTextField3.getText();
-       String b=Config.jTextField2.getText();
+       proc();
        Carreranumerica.jComboBox2a.addItem(a+"["+b+"]");
-       }
+       }      
+      jButtonPLAY.setEnabled(false);
     }//GEN-LAST:event_jButtonPLAYActionPerformed
 
     private void jComboBox2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2aActionPerformed
@@ -602,8 +603,13 @@ public class Carreranumerica extends javax.swing.JFrame {
         switch (Leveltex){
         case "Basic[50]":Level=50;break;
         case "Intermediato[100]":Level=100;break;
-        case "Advanced[150]":Level=150;break; }
-        System.out.println(Level);
+        case "Advanced[150]":Level=150;break; 
+        default:
+        proc();
+        System.out.println(Config.jTextField2.getText());
+        Level=Integer.parseInt(Config.jTextField2.getText());
+        break;
+        }     
         if(Players!=0&&Level>=50){
         jButtonROLLDICE.setEnabled(true);
         } 
@@ -618,7 +624,6 @@ public class Carreranumerica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1aActionPerformed
-        
         Playerstex = jComboBox1a.getSelectedItem().toString();
         Players = Integer.parseInt(Playerstex);
         System.out.println(Players);
