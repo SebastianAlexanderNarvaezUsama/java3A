@@ -580,10 +580,19 @@ public class Carreranumerica extends javax.swing.JFrame {
        jComboBox1a.setEnabled(true);
        jComboBox2a.setEnabled(true);  
        jButtonTRYAGAIN.setEnabled(true);
+       
        if(Config.jTextField1.getText().isEmpty()){
            
        }else{
        Carreranumerica.jComboBox1a.addItem(Config.jTextField1.getText());
+       }
+       
+       if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
+           
+       }else{
+       String a=Config.jTextField3.getText();
+       String b=Config.jTextField2.getText();
+       Carreranumerica.jComboBox2a.addItem(a+"["+b+"]");
        }
     }//GEN-LAST:event_jButtonPLAYActionPerformed
 
@@ -660,7 +669,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     private javax.swing.JButton jButtonTRYAGAIN;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public static javax.swing.JComboBox<String> jComboBox1a;
-    private javax.swing.JComboBox<String> jComboBox2a;
+    public static javax.swing.JComboBox<String> jComboBox2a;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
