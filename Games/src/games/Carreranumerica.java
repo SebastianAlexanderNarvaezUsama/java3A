@@ -215,7 +215,7 @@ public class Carreranumerica extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setToolTipText("");
@@ -354,7 +354,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(9, 0, 88));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Pairs", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("#");
@@ -562,7 +562,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         D1=(int)(n.nextDouble()*6+1);
         D2=(int)(n.nextDouble()*6+1);        
         dados();
-        
+        jLabel5.setText(Integer.toString(P));
         jLabel6.setText(Integer.toString(D1+D2));
         jButtonROLLDICE.setEnabled(true);
         jButtonSTOP.setEnabled(false);
