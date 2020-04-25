@@ -229,13 +229,24 @@ public class Config extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        //Carreranumerica Carreranumerica = new Carreranumerica();       
        //this.setExtendedState(ICONIFIED);
-       if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()||Config.jTextField1.getText().isEmpty()){
-       JOptionPane.showMessageDialog(this,"No dejar espacios vacios.","Mensaje",WARNING_MESSAGE);  
+       if(Config.jTextField1.getText().isEmpty()){
+       if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
+         JOptionPane.showMessageDialog(this,"No se completo la validacion de los datos 'Nivel de dificuldad', recuerde validar todos los capos.","Mensaje",WARNING_MESSAGE);     
+       }               
+       //JOptionPane.showMessageDialog(this,"No dejar este espacio vacios.","Mensaje",WARNING_MESSAGE);    
+       }else {
+       Carreranumerica Carreranumerica = new Carreranumerica();          
+       Carreranumerica.setVisible(true);      
+       this.setVisible(false);   
+       }
+       if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
+ 
        }else{          
        Carreranumerica Carreranumerica = new Carreranumerica();          
        Carreranumerica.setVisible(true);      
-       this.setVisible(false);
+       this.setVisible(false); 
        }
+
        //Carreranumerica.setEnabled(true);
          
              // TODO add your handling code here:

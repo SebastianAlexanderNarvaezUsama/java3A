@@ -587,14 +587,19 @@ public class Carreranumerica extends javax.swing.JFrame {
        jButtonTRYAGAIN.setEnabled(true);
        
        if(!"".equals(b));
-       if(Config.jTextField1.getText().isEmpty()||Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
+       if(Config.jTextField1.getText().isEmpty()){
            
        }else{
        Carreranumerica.jComboBox1a.addItem(Config.jTextField1.getText());
+
+       }  
+       if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
+      
+       }else{
        proc();
-       Carreranumerica.jComboBox2a.addItem(a+"["+b+"]");
-       }      
-      jButtonPLAY.setEnabled(false);
+       Carreranumerica.jComboBox2a.addItem(a+"["+b+"]");   
+       }
+       jButtonPLAY.setEnabled(false);
     }//GEN-LAST:event_jButtonPLAYActionPerformed
 
     private void jComboBox2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2aActionPerformed
