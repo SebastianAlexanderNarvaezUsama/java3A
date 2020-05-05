@@ -1,11 +1,27 @@
 package games;
 
-import java.util.Random;
-import java.util.Scanner;
 //python from random import randint, uniform, random
 public class Games {
     public static void main(String[] args) {
-        Random n=new Random();
+        
+        //Carreranumerica Carreranumerica = new Carreranumerica();          
+        //Carreranumerica.setVisible(true);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*Random n=new Random();
         Scanner read = new Scanner(System.in);
         int D1,D2;
         
@@ -14,7 +30,7 @@ public class Games {
         System.out.println(D1);
         System.out.println(D2);
         
-        
+        */
         
        //Ramdom numbers structure
        //(int)(n.nextDouble()* limite superior + limiteinferior)
