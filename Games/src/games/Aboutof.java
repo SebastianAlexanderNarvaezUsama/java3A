@@ -7,6 +7,7 @@ package games;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +21,7 @@ public class Aboutof extends javax.swing.JFrame {
     public Aboutof() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Icons/Icon_Game.png")).getImage());
     }
 
     /**
@@ -40,17 +42,17 @@ public class Aboutof extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(480, 400));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(9, 0, 88));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 609));
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(null);
@@ -111,11 +113,6 @@ public class Aboutof extends javax.swing.JFrame {
         jPanel1.add(jButton2);
         jButton2.setBounds(150, 220, 80, 80);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/facebook.png"))); // NOI18N
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton3);
-        jButton3.setBounds(360, 220, 80, 80);
-
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/facebook.png"))); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -136,20 +133,26 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(380, 320, 90, 25);
+        jButton5.setBounds(380, 350, 90, 25);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("narvaezusamasebastianalexander@gmail.com");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(160, 180, 300, 17);
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("narvaezusamasebastianalexander@gmail.com");
+        jTextField1.setBorder(null);
+        jTextField1.setSelectionColor(new java.awt.Color(0, 0, 153));
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(160, 180, 290, 23);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/sobre.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(9, 0, 88), 2));
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(-160, 0, 640, 520);
+        jLabel1.setBounds(0, 0, 480, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,7 +163,7 @@ public class Aboutof extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -250,7 +253,6 @@ public class Aboutof extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -258,9 +260,9 @@ public class Aboutof extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelIcoCar1;
     private javax.swing.JLabel jLabelTitulo2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,25 +1,24 @@
 package games;
-
-import java.util.Random;
-//import java.util.Scanner;
-//import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.applet.AudioClip;
-//import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Random;
 /**
  *
  * @author Sebastian Alexander Narvaez Usamá
  */
 public class Carreranumerica extends javax.swing.JFrame {
     String Playerstex="",Leveltex="",a,b,c,letraingresada,newc;//Numero de jugadores y nivel de dificultad seleccionados por el usuario
-    int Players=0,Level=0,Turn=0,newlevel;//Numero de jugadores, nivel de dificultad y turno de jugador
+    int Players=0,Level=0,Turn,newlevel=Level;//Numero de jugadores, nivel de dificultad y turno de jugador
     int D1,D2;//Dados
-    int i,P,A,x;//contador de icos, pares, acomulador 
-    int contador=0;
-    //int[] jugador= new int [Turn];
-    int[] ContaPar= new int [Players];
-    int[] AcomuladorPla= new int [Players];
-    //ArrayList<String> jugadores = new ArrayList<>();
+    int i,P,A,x=-1;//contador de icos, pares, acomulador 
+    int choques=0;
+    int[] Advanced= new int [100000];
+    int[] Missing= new int [100000];
+    int[] Return= new int [100000];
+    int[] Pars= new int [100000];
+    //int[] jugador= new int [Turn];   
+    //ArrayList<Games> jugadores = new ArrayList<>();
     AudioClip DadosT=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Movimiento.wav"));
     AudioClip DadosS=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Tirar.wav"));
     public Carreranumerica() {      
@@ -28,17 +27,34 @@ public class Carreranumerica extends javax.swing.JFrame {
         inicio();
         this.setVisible(true);
     }
-    /*public void play(){
-     if(Turn==Players){
-       
-         
-         
-        Turn++; 
+    public void Play(){
+     x++;
+  if(x<=Players-1){
+     Advanced[x]=A+Advanced[x];   
+     Missing[x]=(Level-Advanced[x]);
+     Return[x]=choques+Return[x];
+     Pars[x]=P+Pars[x];
+     jLabelNumeroJugador.setText(Integer.toString(x+1));
+     
      }else{
-       Turn=1;  
-     }
-        
-    }*/
+     x=0; 
+     Advanced[x]=A+Advanced[x];   
+     Missing[x]=(Level-Advanced[x]);
+     Return[x]=choques+Return[x];
+     Pars[x]=P+Pars[x];
+     jLabelNumeroJugador.setText(Integer.toString(x+1));
+     }   
+      if(Advanced[x]>=Level||Pars[x]==3){
+         Wins Wins= new Wins();        
+         Wins.setVisible(true); 
+         jButtonTRYAGAIN.setEnabled(false);
+         inicio();
+         jButtonPLAY.setEnabled(true);  
+        }else{
+           
+        } 
+
+    }
     public void value(){
     Playerstex="";//Numero de jugadores seleccionado por el usuario
     Leveltex="";//Nivel seleccionado por el usuario
@@ -48,10 +64,8 @@ public class Carreranumerica extends javax.swing.JFrame {
     D2=0;//Dado2
     i=0;//contador de icos
     P=0;//Contador de pares
-    A=0;//Acomulador puntaje
-    Turn=1;
-    x=0;
-   
+    A=0;
+    x=-1; 
     }
     public void inicio(){
 
@@ -65,8 +79,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jComboBox2a.setEnabled(false);  
         jButtonTRYAGAIN.setEnabled(false);
          jLabel6.setText("");
-         jLabelNumeroJugador.setText("#");
-         jLabelNumeroJugador4.setText("#");
+         jLabelNumeroJugador.setText("#");        
          DadosT.stop();  
          DadosS.stop(); 
     }
@@ -75,6 +88,7 @@ public class Carreranumerica extends javax.swing.JFrame {
        b=Config.jTextField2.getText();
     }
     public void dados(){
+        A=0;
         switch (D1) {
             case 1:
                 jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
@@ -96,8 +110,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                 break;
             default:
                 break;
-        }
-       
+        }      
         switch (D2) {
             case 1:
                 jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/dados-1.png.png")));
@@ -123,7 +136,14 @@ public class Carreranumerica extends javax.swing.JFrame {
         if(D1==D2){
             P++;
         }
+        if(D1==D2&&D1==1){
+        A=(21)+A;
+        }else{
         A=(D1+D2)+A;
+        }    
+        
+
+
     }
 
     @SuppressWarnings("unchecked")
@@ -143,26 +163,24 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jComboBox1a = new javax.swing.JComboBox<>();
         jLabelTitulo2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabelNumeroJugador = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabelNumeroJugador2 = new javax.swing.JLabel();
-        jLabelNumeroJugador3 = new javax.swing.JLabel();
+        jLabelAdvanced_positions = new javax.swing.JLabel();
+        jLabelMissing_positions = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabelNumeroJugador1 = new javax.swing.JLabel();
+        jLabelReturns = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelNumeroJugador = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabelPars = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabelTitulo3 = new javax.swing.JLabel();
         jComboBox2a = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabelIcoCar = new javax.swing.JLabel();
         jButtonTRYAGAIN = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabelNumeroJugador4 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -170,7 +188,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabel8.setText("jLabel8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Number race");
+        setTitle("Number Race v1.0");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(9, 0, 88));
@@ -296,14 +314,6 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabelTitulo2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo2.setText("Number of players :");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Turn player: ");
-
-        jLabelNumeroJugador.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelNumeroJugador.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumeroJugador.setText("#");
-
         jPanel3.setBackground(new java.awt.Color(9, 0, 88));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Scores", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
@@ -315,21 +325,29 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Missing positions:");
 
-        jLabelNumeroJugador2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelNumeroJugador2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumeroJugador2.setText("#");
+        jLabelAdvanced_positions.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabelAdvanced_positions.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAdvanced_positions.setText("#");
 
-        jLabelNumeroJugador3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelNumeroJugador3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumeroJugador3.setText("#");
+        jLabelMissing_positions.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabelMissing_positions.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelMissing_positions.setText("#");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Returns: ");
 
-        jLabelNumeroJugador1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelNumeroJugador1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumeroJugador1.setText("#");
+        jLabelReturns.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabelReturns.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelReturns.setText("#");
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Turn player: ");
+
+        jLabelNumeroJugador.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabelNumeroJugador.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNumeroJugador.setText("#");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -337,43 +355,50 @@ public class Carreranumerica extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelNumeroJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNumeroJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNumeroJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNumeroJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelAdvanced_positions, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelMissing_positions, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelReturns, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabelNumeroJugador))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelNumeroJugador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jLabelAdvanced_positions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroJugador3)
+                    .addComponent(jLabelMissing_positions)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelNumeroJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelReturns, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
         jPanel4.setBackground(new java.awt.Color(9, 0, 88));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Pairs", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("#");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLabelPars.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabelPars.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelPars.setText("#");
+        jLabelPars.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -381,14 +406,14 @@ public class Carreranumerica extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelPars, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                .addComponent(jLabelPars, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -431,24 +456,13 @@ public class Carreranumerica extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Next player: ");
-
-        jLabelNumeroJugador4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabelNumeroJugador4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumeroJugador4.setText("#");
-
-        jLabel10.setBackground(new java.awt.Color(15, 0, 153));
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("About of");
-        jLabel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel10.setOpaque(true);
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+        jButton2.setBackground(new java.awt.Color(15, 0, 153));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("About of");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -456,7 +470,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -467,24 +481,15 @@ public class Carreranumerica extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addComponent(jLabelTitulo3)
                         .addGap(30, 30, 30)
-                        .addComponent(jComboBox2a, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jLabelNumeroJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jLabelNumeroJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                        .addComponent(jComboBox2a, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(207, 207, 207)
+                    .addContainerGap()
                     .addComponent(jLabelIcoCar)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jLabelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(81, 81, 81)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(94, 94, 94)
+                    .addComponent(jButton2)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -502,25 +507,17 @@ public class Carreranumerica extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelIcoCar)
-                                .addComponent(jLabelTitulo1)))))
-                .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelIcoCar)
+                            .addComponent(jLabelTitulo1)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabelNumeroJugador)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabelNumeroJugador4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabelTitulo2)
@@ -532,18 +529,18 @@ public class Carreranumerica extends javax.swing.JFrame {
                                 .addComponent(jLabelTitulo3))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox2a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jComboBox2a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonTRYAGAIN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonTRYAGAIN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 32, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -570,18 +567,6 @@ public class Carreranumerica extends javax.swing.JFrame {
      jButtonROLLDICE.setEnabled(false);
      jButtonPLAY.setEnabled(false);
      DadosT.loop();  
-     if(Turn<=Players-1){
-     jLabelNumeroJugador4.setText(Integer.toString(Turn+1));
-     }else if(Turn==Turn){
-        jLabelNumeroJugador4.setText(Integer.toString(1+Turn-Turn));
-     }
-     jLabelNumeroJugador.setText(Integer.toString(Turn));       
-        if(Turn<=Players-1){          
-            Turn++;
-        }else if(Turn==Players){
-              Turn=1;  
-        }
-     
     }//GEN-LAST:event_jButtonROLLDICEActionPerformed
 
     private void jButtonSTOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSTOPActionPerformed
@@ -589,14 +574,24 @@ public class Carreranumerica extends javax.swing.JFrame {
         D1=(int)(n.nextDouble()*6+1);
         D2=(int)(n.nextDouble()*6+1);        
         dados();
-        jLabel5.setText(Integer.toString(P));
+        if(D1==D2&&D1==1){
+        jLabel6.setText(Integer.toString(21));
+        }else{
         jLabel6.setText(Integer.toString(D1+D2));
+        }
         jButtonROLLDICE.setEnabled(true);
         jButtonSTOP.setEnabled(false);
         DadosT.stop();  
         DadosS.play(); 
-        System.out.println(A);
+        Play();
+        jLabelAdvanced_positions.setText(Integer.toString(Advanced[x])); 
+        jLabelMissing_positions.setText(Integer.toString(Missing[x])); 
+        jLabelReturns.setText(Integer.toString(Return[x])); 
+        jLabelPars.setText(Integer.toString(Pars[x]));        
+        
 
+        System.out.println("Jugador: "+x+"||Posicion: "+Advanced[x]+"||Faltantes: "+Missing[x]+"||Pares: "+Pars[x]);  
+        
     }//GEN-LAST:event_jButtonSTOPActionPerformed
 
     private void jButtonTRYAGAINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTRYAGAINActionPerformed
@@ -649,7 +644,6 @@ public class Carreranumerica extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2aActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
        Config Config= new Config();        
        Config.setVisible(true);      
        this.setVisible(false);
@@ -667,11 +661,11 @@ public class Carreranumerica extends javax.swing.JFrame {
         }          // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1aActionPerformed
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        Aboutof Aboutof = new Aboutof();          
        Aboutof.setVisible(true);      
-       this.setVisible(false);       
-    }//GEN-LAST:event_jLabel10MouseClicked
+       this.setVisible(false);   
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -707,6 +701,7 @@ public class Carreranumerica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     public static javax.swing.JButton jButtonPLAY;
     private javax.swing.JButton jButtonROLLDICE;
     private javax.swing.JButton jButtonSTOP;
@@ -715,23 +710,20 @@ public class Carreranumerica extends javax.swing.JFrame {
     public static javax.swing.JComboBox<String> jComboBox1a;
     public static javax.swing.JComboBox<String> jComboBox2a;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelAdvanced_positions;
     private javax.swing.JLabel jLabelD1;
     private javax.swing.JLabel jLabelD2;
     private javax.swing.JLabel jLabelIcoCar;
-    private javax.swing.JLabel jLabelNumeroJugador;
-    private javax.swing.JLabel jLabelNumeroJugador1;
-    private javax.swing.JLabel jLabelNumeroJugador2;
-    private javax.swing.JLabel jLabelNumeroJugador3;
-    private javax.swing.JLabel jLabelNumeroJugador4;
+    private javax.swing.JLabel jLabelMissing_positions;
+    public static javax.swing.JLabel jLabelNumeroJugador;
+    private javax.swing.JLabel jLabelPars;
+    private javax.swing.JLabel jLabelReturns;
     private javax.swing.JLabel jLabelTitulo1;
     private javax.swing.JLabel jLabelTitulo2;
     private javax.swing.JLabel jLabelTitulo3;

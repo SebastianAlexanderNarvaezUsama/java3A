@@ -1,6 +1,7 @@
 
 package games;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
@@ -12,7 +13,7 @@ public class Config extends javax.swing.JFrame {
     public Config() {
         initComponents();
         setLocationRelativeTo(null);
-       
+       setIconImage(new ImageIcon(getClass().getResource("/Icons/Icon_Game.png")).getImage());
     }
   
     @SuppressWarnings("unchecked")
