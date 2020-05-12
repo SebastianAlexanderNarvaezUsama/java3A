@@ -1,6 +1,7 @@
 
 package games;
 
+import java.applet.AudioClip;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
@@ -9,11 +10,15 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
  *
  * @author Sebastian Alexander Narvaez Usamá
  */
+ 
 public class Config extends javax.swing.JFrame {
+    AudioClip Hambien0=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Donkey.wav"));
     public Config() {
         initComponents();
         setLocationRelativeTo(null);
        setIconImage(new ImageIcon(getClass().getResource("/Icons/Icon_Game.png")).getImage());
+     Hambien0.loop();   
+     
     }
   
     @SuppressWarnings("unchecked")
@@ -228,11 +233,11 @@ public class Config extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2KeyTyped
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       //Carreranumerica Carreranumerica = new Carreranumerica();       
+       Hambien0.stop(); //Carreranumerica Carreranumerica = new Carreranumerica();       
        //this.setExtendedState(ICONIFIED);
        if(Config.jTextField1.getText().isEmpty()){
        if(Config.jTextField2.getText().isEmpty()||Config.jTextField3.getText().isEmpty()){
-         JOptionPane.showMessageDialog(this,"No se completo la validacion de los datos 'Nivel de dificuldad', recuerde validar todos los capos.","Mensaje",WARNING_MESSAGE);     
+         JOptionPane.showMessageDialog(this,"Validation of 'Difficulty level' data not completed, remember to validate all fields.","Mensaje",WARNING_MESSAGE);     
        }               
        //JOptionPane.showMessageDialog(this,"No dejar este espacio vacios.","Mensaje",WARNING_MESSAGE);    
        }else {
@@ -246,6 +251,17 @@ public class Config extends javax.swing.JFrame {
        Carreranumerica Carreranumerica = new Carreranumerica();          
        Carreranumerica.setVisible(true);      
        this.setVisible(false); 
+       }
+       String Val=Config.jTextField1.getText();
+       String Val3=Config.jTextField3.getText();
+       String Val2=Config.jTextField2.getText();
+       
+               
+       if(Val=="1"||Val=="2"||Val=="3"||Val=="4"){
+       JOptionPane.showMessageDialog(this,"This number of players is already enabled in the menu.","Mensaje",WARNING_MESSAGE);                
+       }
+       if(Val3=="Basic"||Val3=="Intermediato"||Val3=="Advanced"||Val2=="50"||Val2=="100"||Val2=="200"){
+       JOptionPane.showMessageDialog(this,"This data is already enabled in the menu, try changing the number of scoops and the name of the difficulty level.","Mensaje",WARNING_MESSAGE);                
        }
 
        //Carreranumerica.setEnabled(true);
@@ -267,6 +283,8 @@ public class Config extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3KeyTyped
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+       Hambien0.stop();  
        Carreranumerica Carreranumerica = new Carreranumerica();          
        Carreranumerica.setVisible(true);      
        this.setVisible(false);        // TODO add your handling code here:

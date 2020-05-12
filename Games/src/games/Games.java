@@ -2,7 +2,7 @@ package games;
 
 //python from random import randint, uniform, random
 public class Games {
-    int Advanced_positions, Missing_positions, Returns, Pars;
+    /*int Advanced_positions, Missing_positions, Returns, Pars;
     public Games(int Advanced_positions, int Missing_positions, int Returns, int Pars) {
         this.Advanced_positions = Advanced_positions;
         this.Missing_positions = Missing_positions;
@@ -46,7 +46,7 @@ public class Games {
     
     
     
-    
+    */
     //public static void main(String[] args) { }
 
 

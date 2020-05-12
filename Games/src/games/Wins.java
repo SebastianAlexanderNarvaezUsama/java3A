@@ -5,6 +5,7 @@
  */
 package games;
 
+import java.applet.AudioClip;
 import javax.swing.ImageIcon;
 
 /**
@@ -25,6 +26,8 @@ public class Wins extends javax.swing.JFrame {
         String f=Carreranumerica.jLabelNumeroJugador.getText();
         jLabel4.setText("Player "+f+" thanks for playing.");
         
+        
+        
     }
 
     /**
@@ -37,6 +40,7 @@ public class Wins extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -44,17 +48,30 @@ public class Wins extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 220));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(500, 233));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(9, 0, 88));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
         jPanel1.setLayout(null);
+
+        jButton1.setBackground(new java.awt.Color(9, 0, 88));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton1.setText("Close");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(420, 190, 67, 25);
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 500, 230);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 0, 500, 220);
+        jLabel2.setBounds(0, 0, 500, 230);
 
         jPanel2.setOpaque(false);
 
@@ -77,14 +94,13 @@ public class Wins extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("WINNER");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(100, 34, 320, 50);
+        jLabel3.setBounds(100, 60, 320, 50);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(104, 90, 310, 100);
+        jLabel4.setBounds(100, 120, 320, 100);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,6 +115,10 @@ public class Wins extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,6 +156,7 @@ public class Wins extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

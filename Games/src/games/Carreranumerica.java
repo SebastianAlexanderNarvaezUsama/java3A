@@ -17,15 +17,22 @@ public class Carreranumerica extends javax.swing.JFrame {
     int[] Missing= new int [100000];
     int[] Return= new int [100000];
     int[] Pars= new int [100000];
+    
     //int[] jugador= new int [Turn];   
     //ArrayList<Games> jugadores = new ArrayList<>();
     AudioClip DadosT=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Movimiento.wav"));
     AudioClip DadosS=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Dados_Tirar.wav"));
+    AudioClip Winer=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/ganar.wav"));
+    AudioClip On=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Donkeykongcountry.wav"));
+    AudioClip Hambien0=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Donkey.wav"));
+    
     public Carreranumerica() {      
         initComponents();
+        On.stop();
         setLocationRelativeTo(null);
         inicio();
         this.setVisible(true);
+        Hambien0.loop();      
     }
     public void Play(){
      x++;
@@ -47,8 +54,9 @@ public class Carreranumerica extends javax.swing.JFrame {
       if(Advanced[x]>=Level||Pars[x]==3){
          Wins Wins= new Wins();        
          Wins.setVisible(true); 
-         jButtonTRYAGAIN.setEnabled(false);
+         Winer.play();
          inicio();
+         value();      
          jButtonPLAY.setEnabled(true);  
         }else{
            
@@ -66,20 +74,27 @@ public class Carreranumerica extends javax.swing.JFrame {
     P=0;//Contador de pares
     A=0;
     x=-1; 
+    
     }
     public void inicio(){
-
+       
        setIconImage(new ImageIcon(getClass().getResource("/Icons/Icon_Game.png")).getImage());
         jLabelD1.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));
         jLabelD2.setIcon(new ImageIcon(getClass().getResource("/Icons/DADO_.gif")));
         jLabelIcoCar.setIcon(new ImageIcon(getClass().getResource("/Icons/Car.gif")));
+        jButton2.setIcon(new ImageIcon(getClass().getResource("/Icons/market.png")));
         jButtonROLLDICE.setEnabled(false);
         jButtonSTOP.setEnabled(false);
         jComboBox1a.setEnabled(false);  
         jComboBox2a.setEnabled(false);  
         jButtonTRYAGAIN.setEnabled(false);
          jLabel6.setText("");
-         jLabelNumeroJugador.setText("#");        
+         jLabelNumeroJugador.setText("#");   
+         jLabelAdvanced_positions.setText("#");   
+         jLabelMissing_positions.setText("#");  
+         jLabelReturns.setText("#");  
+         jLabelPars.setText("#"); 
+         
          DadosT.stop();  
          DadosS.stop(); 
     }
@@ -265,18 +280,20 @@ public class Carreranumerica extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButtonPLAY, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(172, 172, 172))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabelD1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelD2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonSTOP, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonROLLDICE, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButtonPLAY, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                .addGap(70, 70, 70))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonSTOP, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonROLLDICE, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -287,15 +304,17 @@ public class Carreranumerica extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelD1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelD2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonROLLDICE, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonSTOP, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonPLAY, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSTOP, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButtonPLAY, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -367,7 +386,7 @@ public class Carreranumerica extends javax.swing.JFrame {
                     .addComponent(jLabelAdvanced_positions, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelMissing_positions, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelReturns, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,7 +426,7 @@ public class Carreranumerica extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(jLabelPars, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -499,22 +518,24 @@ public class Carreranumerica extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButtonTRYAGAIN))
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel7)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelIcoCar)
                             .addComponent(jLabelTitulo1)))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -588,21 +609,29 @@ public class Carreranumerica extends javax.swing.JFrame {
         jLabelMissing_positions.setText(Integer.toString(Missing[x])); 
         jLabelReturns.setText(Integer.toString(Return[x])); 
         jLabelPars.setText(Integer.toString(Pars[x]));        
-        
-
         System.out.println("Jugador: "+x+"||Posicion: "+Advanced[x]+"||Faltantes: "+Missing[x]+"||Pares: "+Pars[x]);  
         
     }//GEN-LAST:event_jButtonSTOPActionPerformed
 
     private void jButtonTRYAGAINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTRYAGAINActionPerformed
+     On.stop();
+     Hambien0.loop(); 
      jButtonTRYAGAIN.setEnabled(false);
      inicio();
+     value();
      jButtonPLAY.setEnabled(true);  
      jComboBox1a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
      jComboBox2a.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[200]" }));
     }//GEN-LAST:event_jButtonTRYAGAINActionPerformed
 
     private void jButtonPLAYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPLAYActionPerformed
+       On.stop();
+       Hambien0.stop();
+       On.loop();
+       Wins Wins= new Wins();        
+       Wins.setVisible(false);          
+       jButtonPLAY.setEnabled(false);
+       inicio();
        value();
        jComboBox1a.setEnabled(true);
        jComboBox2a.setEnabled(true);  
@@ -621,7 +650,7 @@ public class Carreranumerica extends javax.swing.JFrame {
        proc();
        Carreranumerica.jComboBox2a.addItem(a+"["+b+"]");   
        }
-       jButtonPLAY.setEnabled(false);
+       
     }//GEN-LAST:event_jButtonPLAYActionPerformed
 
     private void jComboBox2aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2aActionPerformed
@@ -638,12 +667,13 @@ public class Carreranumerica extends javax.swing.JFrame {
         break;
         }   
         System.out.println(Level);
-        if(Players!=0&&Level>=50){
+        if(Players!=0&&Level>=1){
         jButtonROLLDICE.setEnabled(true);
         } 
     }//GEN-LAST:event_jComboBox2aActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Hambien0.stop();      
        Config Config= new Config();        
        Config.setVisible(true);      
        this.setVisible(false);
@@ -662,6 +692,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1aActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       Hambien0.stop();
        Aboutof Aboutof = new Aboutof();          
        Aboutof.setVisible(true);      
        this.setVisible(false);   

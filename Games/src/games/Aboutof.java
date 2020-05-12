@@ -5,6 +5,7 @@
  */
 package games;
 
+import java.applet.AudioClip;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import javax.swing.ImageIcon;
@@ -14,7 +15,7 @@ import javax.swing.ImageIcon;
  * @author Asus
  */
 public class Aboutof extends javax.swing.JFrame {
-
+AudioClip Hambien0=java.applet.Applet.newAudioClip(getClass().getResource("/Sound/Donkey.wav"));
     /**
      * Creates new form Aboutof
      */
@@ -22,6 +23,7 @@ public class Aboutof extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("/Icons/Icon_Game.png")).getImage());
+          Hambien0.loop();  
     }
 
     /**
@@ -40,6 +42,7 @@ public class Aboutof extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -88,9 +91,15 @@ public class Aboutof extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Copyright © 2020 Sebastian Alexander N.U.");
+        jLabel5.setText("Sigueme en estas plataformas para ver mi trabajo:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(160, 150, 300, 17);
+        jLabel5.setBounds(40, 220, 370, 17);
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Copyright © 2020 Sebastian Alexander N.U.");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(160, 150, 300, 17);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/youtube.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -101,7 +110,7 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(40, 220, 80, 80);
+        jButton1.setBounds(40, 250, 80, 80);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/github.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -111,7 +120,7 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(150, 220, 80, 80);
+        jButton2.setBounds(140, 250, 80, 80);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/facebook.png"))); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -121,7 +130,7 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(250, 220, 80, 80);
+        jButton4.setBounds(240, 250, 80, 80);
 
         jButton5.setBackground(new java.awt.Color(15, 0, 153));
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -133,7 +142,7 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(380, 350, 90, 25);
+        jButton5.setBounds(380, 360, 90, 25);
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 0, 0));
@@ -210,6 +219,7 @@ public class Aboutof extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       Hambien0.stop();
        Carreranumerica Carreranumerica = new Carreranumerica();          
        Carreranumerica.setVisible(true);      
        this.setVisible(false);
@@ -260,6 +270,7 @@ public class Aboutof extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelIcoCar1;
     private javax.swing.JLabel jLabelTitulo2;
     private javax.swing.JPanel jPanel1;
