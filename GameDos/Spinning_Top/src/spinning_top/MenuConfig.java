@@ -51,7 +51,6 @@ public class MenuConfig extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/git.gif"))); // NOI18N
-        jLabel5.setPreferredSize(new java.awt.Dimension(200, 200));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -91,7 +90,6 @@ public class MenuConfig extends javax.swing.JFrame {
         jLabel3.setBounds(10, 40, 430, 200);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pirinola.gif"))); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(250, 250));
         jPanel1.add(jLabel2);
         jLabel2.setBounds(390, 220, 250, 250);
 

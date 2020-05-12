@@ -15,14 +15,12 @@ public class Spinning_Top {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int turn=1;//turno
-        while(turn<=4){//el ciclo solo es para ver la efectividad de los turnos.
-        System.out.println("turno "+turn);
-        if(turn==4){
-            turn-=4;
-        }
-        turn++;
+        // Sistema de turnos en consola
+        for(int turn=0;turn<4;turn++){
+            if(turn==4){
+                turn-=3;
+            }
+            System.out.println("Turno: "+(turn+1));
         }
     }
     
