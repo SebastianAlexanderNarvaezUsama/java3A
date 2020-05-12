@@ -97,7 +97,10 @@ public class Aboutof extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(100, 210, 350, 14);
 
+        jButton1.setBackground(new java.awt.Color(138, 149, 151));
+        jButton1.setForeground(new java.awt.Color(204, 0, 0));
         jButton1.setText("VOLVER");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.darkGray));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
