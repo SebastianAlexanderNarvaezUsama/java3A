@@ -49,18 +49,6 @@ public class MenuConfig extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-<<<<<<< HEAD
-=======
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/git.gif"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(460, 0, 200, 170);
-
->>>>>>> 2b37606673ff154dd43afab8dd9a2ca107b26197
         jButton1.setBackground(new java.awt.Color(128, 64, 0));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(212, 175, 55));
