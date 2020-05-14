@@ -34,7 +34,6 @@ public class MenuConfig extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -49,15 +48,6 @@ public class MenuConfig extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/git.gif"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(460, 0, 200, 170);
 
         jButton1.setBackground(new java.awt.Color(128, 64, 0));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -77,6 +67,11 @@ public class MenuConfig extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(212, 175, 55));
         jButton2.setText("PLAY");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(255, 153, 0), null, new java.awt.Color(204, 102, 0)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(30, 440, 170, 80);
 
@@ -109,18 +104,17 @@ public class MenuConfig extends javax.swing.JFrame {
      this.setVisible(false); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        if(java.awt.Desktop.isDesktopSupported()){
-            java.awt.Desktop desktop =java.awt.Desktop.getDesktop();
-
-            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
-                try{
-                    java.net.URI uri=new java.net.URI("https://github.com/SebastianAlexanderNarvaezUsama/java3A/tree/master/GameDos/Spinning_Top");
-                    desktop.browse(uri);
-                }catch(URISyntaxException|IOException ex){}
-            }
-        }     
-    }//GEN-LAST:event_jLabel5MouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    ConfigZone ConfigZone=new ConfigZone();
+    this.setVisible(false);
+    ConfigZone.setVisible(true);
+        
+        
+        
+    /*Tablero Tablero = new Tablero();
+    this.setVisible(false);
+    Tablero.setVisible(true);*/
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +158,6 @@ public class MenuConfig extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

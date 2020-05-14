@@ -34,6 +34,7 @@ public class Aboutof extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -46,26 +47,37 @@ public class Aboutof extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Spinning Top - About of");
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(480, 402));
         setResizable(false);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
         jPanel1.setLayout(null);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/git.gif"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(280, 80, 200, 170);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Copyright © 2020 Grupo BotinZ ");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(30, 170, 430, 17);
+        jLabel7.setBounds(20, 180, 430, 17);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("v1.0");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(320, 140, 90, 20);
+        jLabel6.setBounds(20, 150, 90, 30);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Number Race - Beta Edition");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(30, 140, 300, 22);
+        jLabel5.setBounds(20, 130, 300, 22);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/github.png"))); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -75,7 +87,7 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(20, 320, 60, 60);
+        jButton4.setBounds(20, 310, 60, 60);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/github.png"))); // NOI18N
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -85,17 +97,17 @@ public class Aboutof extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(20, 210, 60, 60);
+        jButton3.setBounds(20, 240, 60, 60);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Ing.Sis Sebastian Alexander Narvaez U.");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(100, 320, 350, 14);
+        jLabel2.setBounds(90, 330, 350, 14);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Ing.Sis Diana Carolina Botina Garcia.");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(100, 210, 350, 14);
+        jLabel3.setBounds(90, 260, 350, 14);
 
         jButton1.setBackground(new java.awt.Color(138, 149, 151));
         jButton1.setForeground(new java.awt.Color(204, 0, 0));
@@ -112,9 +124,10 @@ public class Aboutof extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/tittle2.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, 0, 480, 120);
+        jLabel4.setBounds(0, 10, 480, 110);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/fire.gif"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 480, 400);
 
@@ -122,11 +135,11 @@ public class Aboutof extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
         );
 
         pack();
@@ -163,6 +176,19 @@ public class Aboutof extends javax.swing.JFrame {
             }
         }  
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        if(java.awt.Desktop.isDesktopSupported()){
+            java.awt.Desktop desktop =java.awt.Desktop.getDesktop();
+
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
+                try{
+                    java.net.URI uri=new java.net.URI("https://github.com/SebastianAlexanderNarvaezUsama/java3A/tree/master/GameDos/Spinning_Top");
+                    desktop.browse(uri);
+                }catch(URISyntaxException|IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -210,6 +236,7 @@ public class Aboutof extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
