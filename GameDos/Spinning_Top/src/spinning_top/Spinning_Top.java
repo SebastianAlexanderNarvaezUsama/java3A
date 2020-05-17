@@ -13,18 +13,19 @@ import java.util.Scanner;
  * @author Asus
  */
 public class Spinning_Top {
-    static void CarasPirinola(){
-        int coins1=5,coins=0;
         Random ladosp=new Random();
         int caras=(int)(ladosp.nextDouble()*6+1);
-        switch(caras){
+    public static void CarasPirinola(){
+        //int coins1=5,coins=0;
+        Spinning_Top lados=new Spinning_Top();
+        switch(lados.caras){
             case 1:
                 System.out.println("Pon 1");
-                coins1-=1;
+                Pon1();
                 break;
             case 2:
                 System.out.println("Pon 2");
-                coins1-=2;
+                //coins1-=2;
                 break;
             case 3:
                 System.out.println("Toma 1");
@@ -37,31 +38,34 @@ public class Spinning_Top {
                 break;
             case 6:
                 System.out.println("Todos ponen");
-                coins1-=1;
+                //coins1-=1;
                 break;
-        }    
+        }
     }
     
-    static void Menu(){
+    public static void Menu(){
         Scanner reader=new Scanner(System.in);
-        int coins1=5,coins2=10,coins3=20,coins4=30,coins=0;
+        Spinning_Top monedas=new Spinning_Top();
+        int /*coins1=5,*/coins2=5,coins3=20,coins4=30,coins=0;
         System.out.println("Menú");
         System.out.println("1. 5 coins");
         System.out.println("2. 10 coins");
         System.out.println("3. 20 coins");
         System.out.println("4. 30 coins");
-        System.out.println("Elige una opción: ");
+        System.out.println("Elige una opción: \n");
         int opcion=reader.nextInt();
         //do{
         switch(opcion){
             case 1:
+                System.out.println("-------------------------");
                 System.out.println("Bienvenido al nivel 1");
-                CarasPirinola();
+                System.out.println("/////////////////////////");
+                //CarasPirinola();
                 while(coins==0){
                 for(int turn=1;turn<5;turn++){
                     System.out.println("Player "+turn);
                     CarasPirinola();
-                    System.out.println("Coins Player "+turn+": "+Monedas(coins1));
+                    //System.out.println("Coins Player "+turn+": ");
                     System.out.println("---------------------");
                     System.out.println("/////////////////////");
                     Esperar();
@@ -105,29 +109,19 @@ public class Spinning_Top {
 
     }
     
-    static int Monedas(int coins1){
-        int coins = 0;
-        Random ladosp=new Random();
-        int caras=(int)(ladosp.nextDouble()*6+1);
-        switch (caras) {
-            case 1:
-                coins=coins1-1;
-                break;
-            case 2:
-                coins=coins1-2;
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                coins1-=1;
-                break;
-        }
-        return coins;
-    }
+   public static int Pon1(){//una funcion
+       int coins1=5;
+       coins1=coins1-1;
+       System.out.println("Coins: "+coins1);
+       return coins1;
+   }
+ 
+   public static int Pon2(){
+       int coins1=5;
+       coins1=coins1-2;
+       System.out.println("Coins: "+coins1);
+       return coins1;
+   }
     
     static void Esperar(){
         try{
