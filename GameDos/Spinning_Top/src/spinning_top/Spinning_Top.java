@@ -25,20 +25,23 @@ public class Spinning_Top {
                 break;
             case 2:
                 System.out.println("Pon 2");
-                //coins1-=2;
+                Pon2();
                 break;
             case 3:
                 System.out.println("Toma 1");
+                Toma1();
                 break;
             case 4:
                 System.out.println("Toma 2");
+                Toma2();
                 break;
             case 5:
                 System.out.println("Toma todo");
+                Tomatodo();
                 break;
             case 6:
                 System.out.println("Todos ponen");
-                //coins1-=1;
+                TodosPonen();
                 break;
         }
     }
@@ -111,8 +114,11 @@ public class Spinning_Top {
     
    public static int Pon1(){//una funcion
        int coins1=5;
+       int acumulado=0;
        coins1=coins1-1;
+       acumulado++;
        System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
        return coins1;
    }
  
@@ -121,6 +127,24 @@ public class Spinning_Top {
        coins1=coins1-2;
        System.out.println("Coins: "+coins1);
        return coins1;
+   }
+   
+   public static int Toma1(){
+       int coins1=5;
+       int acumulado=0;
+       return 0;
+   }
+   
+   public static int Toma2(){
+       return 0;
+   }
+   
+   public static int Tomatodo(){
+       return 0;
+   }
+   
+   public static int TodosPonen(){
+       return 0;
    }
     
     static void Esperar(){
@@ -136,6 +160,17 @@ public class Spinning_Top {
      */
     public static void main(String[] args) {
         Menu();
+        int acumulado=0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         /*for(int turn=0;turn<4;turn++){
             if(turn==4){
                 turn-=3;
