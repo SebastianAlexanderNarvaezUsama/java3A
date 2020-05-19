@@ -15,36 +15,136 @@ import java.util.Scanner;
 public class Spinning_Top {
         Random ladosp=new Random();
         int caras=(int)(ladosp.nextDouble()*6+1);
-    public static void CarasPirinola(){
+    public static void CarasPirinolaLevel1(){ //Caras Level1
         //int coins1=5,coins=0;
         Spinning_Top lados=new Spinning_Top();
         switch(lados.caras){
             case 1:
                 System.out.println("Pon 1");
-                Pon1();
+                Pon1L1();
                 break;
             case 2:
                 System.out.println("Pon 2");
-                Pon2();
+                Pon2L1();
                 break;
             case 3:
                 System.out.println("Toma 1");
-                Toma1();
+                Toma1L1();
                 break;
             case 4:
                 System.out.println("Toma 2");
-                Toma2();
+                Toma2L1();
                 break;
             case 5:
                 System.out.println("Toma todo");
-                Tomatodo();
+                TomatodoL1();
                 break;
             case 6:
                 System.out.println("Todos ponen");
-                TodosPonen();
+                TodosPonenL1();
                 break;
         }
     }
+    
+    ////////////////////////////////////////////////////////////////
+    
+    
+    public static void CarasPirinolaLevel2(){ //Caras Level2
+        Spinning_Top lados=new Spinning_Top();
+        switch(lados.caras){
+            case 1:
+                System.out.println("Pon 1");
+                Pon1L2();
+                break;
+            case 2:
+                System.out.println("Pon 2");
+                Pon2L2();
+                break;
+            case 3:
+                System.out.println("Toma 1");
+                Toma1L2();
+                break;
+            case 4:
+                System.out.println("Toma 2");
+                Toma2L2();
+                break;
+            case 5:
+                System.out.println("Toma todo");
+                TomatodoL2();
+                break;
+            case 6:
+                System.out.println("Todos ponen");
+                TodosPonenL2();
+                break;
+        }
+    }
+    
+    ///////////////////////////////////////////////////////////////
+    
+    public static void CarasPirinolaLevel3(){ //Caras Level3
+        Spinning_Top lados=new Spinning_Top();
+        switch(lados.caras){
+            case 1:
+                System.out.println("Pon 1");
+                Pon1L3();
+                break;
+            case 2:
+                System.out.println("Pon 2");
+                Pon2L3();
+                break;
+            case 3:
+                System.out.println("Toma 1");
+                Toma1L3();
+                break;
+            case 4:
+                System.out.println("Toma 2");
+                Toma2L3();
+                break;
+            case 5:
+                System.out.println("Toma todo");
+                TomatodoL3();
+                break;
+            case 6:
+                System.out.println("Todos ponen");
+                TodosPonenL3();
+                break;
+        }
+    }
+    
+    ///////////////////////////////////////////////////////////////////////
+    
+    public static void CarasPirinolaLevel4(){ //Caras Level4
+        Spinning_Top lados=new Spinning_Top();
+        switch(lados.caras){
+            case 1:
+                System.out.println("Pon 1");
+                Pon1L4();
+                break;
+            case 2:
+                System.out.println("Pon 2");
+                Pon2L4();
+                break;
+            case 3:
+                System.out.println("Toma 1");
+                Toma1L4();
+                break;
+            case 4:
+                System.out.println("Toma 2");
+                Toma2L4();
+                break;
+            case 5:
+                System.out.println("Toma todo");
+                TomatodoL4();
+                break;
+            case 6:
+                System.out.println("Todos ponen");
+                TodosPonenL4();
+                break;
+        }
+    }
+    
+    
+    
     
     public static void Menu(){
         Scanner reader=new Scanner(System.in);
@@ -67,7 +167,7 @@ public class Spinning_Top {
                 while(coins==0){
                 for(int turn=1;turn<5;turn++){
                     System.out.println("Player "+turn);
-                    CarasPirinola();
+                    CarasPirinolaLevel1();
                     //System.out.println("Coins Player "+turn+": ");
                     System.out.println("---------------------");
                     System.out.println("/////////////////////");
@@ -76,33 +176,45 @@ public class Spinning_Top {
                 }
                 break;
             case 2:
+                System.out.println("--------------------------");
                 System.out.println("Bienvenido al nivel 2");
+                System.out.println("//////////////////////////");
+                while(coins==0){
                 for(int turn=1;turn<5;turn++){
                     System.out.println("Player "+turn);
-                    CarasPirinola();
+                    CarasPirinolaLevel2();
                     System.out.println("---------------------");
                     System.out.println("/////////////////////");
                     Esperar();
+                }
                 }
                 break;
             case 3:
+                System.out.println("-------------------------");
                 System.out.println("Bienvenido al nivel 3");
+                System.out.println("/////////////////////////");
+                while(coins==0){
                 for(int turn=1;turn<5;turn++){
                     System.out.println("Player "+turn);
-                    CarasPirinola();
+                    CarasPirinolaLevel3();
                     System.out.println("---------------------");
                     System.out.println("/////////////////////");
                     Esperar();
                 }
+                }
                 break;
             case 4:
+                System.out.println("-------------------------");
                 System.out.println("Bienvenido al nivel 4");
+                System.out.println("/////////////////////////");
+                while(coins==0){
                 for(int turn=1;turn<5;turn++){
                     System.out.println("Player "+turn);
-                    CarasPirinola();
+                    CarasPirinolaLevel4();
                     System.out.println("---------------------");
                     System.out.println("/////////////////////");
                     Esperar();
+                }
                 }
                 break;
             default:
@@ -112,7 +224,7 @@ public class Spinning_Top {
 
     }
     
-   public static int Pon1(){//una funcion
+   public static int Pon1L1(){//Funciones Level1
        int coins1=5;
        int acumulado=0;
        coins1=coins1-1;
@@ -122,31 +234,245 @@ public class Spinning_Top {
        return coins1;
    }
  
-   public static int Pon2(){
+   public static int Pon2L1(){
        int coins1=5;
+       int acumulado=0;
        coins1=coins1-2;
+       acumulado+=2;
        System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
        return coins1;
    }
    
-   public static int Toma1(){
+   public static int Toma1L1(){
        int coins1=5;
+       int acumulado=2;
+       coins1++;
+       acumulado--;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int Toma2L1(){
+       int coins1=5;
+       int acumulado=2;
+       coins1+=2;
+       acumulado-=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int TomatodoL1(){
+       int coins1=5;
+       int acumulado=2;
+       coins1+=acumulado;
+       acumulado=0;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int TodosPonenL1(){
+       int coins1=5;
+       int acumulado=2;
+       coins1--;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   ////////////////////////////////////////////////////////////////////////////////////7
+   
+   public static int Pon1L2(){//Funciones level2
+       int coins1=10;
        int acumulado=0;
-       return 0;
+       coins1=coins1-1;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+ 
+   public static int Pon2L2(){
+       int coins1=10;
+       int acumulado=0;
+       coins1=coins1-2;
+       acumulado+=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
    }
    
-   public static int Toma2(){
-       return 0;
+   public static int Toma1L2(){
+       int coins1=10;
+       int acumulado=2;
+       coins1++;
+       acumulado--;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
    }
    
-   public static int Tomatodo(){
-       return 0;
+   public static int Toma2L2(){
+       int coins1=10;
+       int acumulado=2;
+       coins1+=2;
+       acumulado-=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
    }
    
-   public static int TodosPonen(){
-       return 0;
+   public static int TomatodoL2(){
+       int coins1=10;
+       int acumulado=2;
+       coins1+=acumulado;
+       acumulado=0;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
    }
-    
+   
+   public static int TodosPonenL2(){
+       int coins1=10;
+       int acumulado=2;
+       coins1--;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   //////////////////////////////////////////////////////////////////
+   
+   public static int Pon1L3(){//Funciones level3
+       int coins1=20;
+       int acumulado=0;
+       coins1=coins1-1;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+ 
+   public static int Pon2L3(){
+       int coins1=20;
+       int acumulado=0;
+       coins1=coins1-2;
+       acumulado+=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int Toma1L3(){
+       int coins1=20;
+       int acumulado=2;
+       coins1++;
+       acumulado--;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int Toma2L3(){
+       int coins1=20;
+       int acumulado=2;
+       coins1+=2;
+       acumulado-=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int TomatodoL3(){
+       int coins1=20;
+       int acumulado=2;
+       coins1+=acumulado;
+       acumulado=0;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int TodosPonenL3(){
+       int coins1=20;
+       int acumulado=2;
+       coins1--;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   ///////////////////////////////////////////////////////////////////////////
+   
+   public static int Pon1L4(){//Funciones level4
+       int coins1=30;
+       int acumulado=0;
+       coins1=coins1-1;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+ 
+   public static int Pon2L4(){
+       int coins1=30;
+       int acumulado=0;
+       coins1=coins1-2;
+       acumulado+=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int Toma1L4(){
+       int coins1=30;
+       int acumulado=2;
+       coins1++;
+       acumulado--;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int Toma2L4(){
+       int coins1=30;
+       int acumulado=2;
+       coins1+=2;
+       acumulado-=2;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int TomatodoL4(){
+       int coins1=30;
+       int acumulado=2;
+       coins1+=acumulado;
+       acumulado=0;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   public static int TodosPonenL4(){
+       int coins1=30;
+       int acumulado=2;
+       coins1--;
+       acumulado++;
+       System.out.println("Coins: "+coins1);
+       System.out.println("Acumulado: "+acumulado);
+       return coins1;
+   }
+   
+   
+   
+   
     static void Esperar(){
         try{
             Thread.sleep(5*1000);
@@ -160,7 +486,6 @@ public class Spinning_Top {
      */
     public static void main(String[] args) {
         Menu();
-        int acumulado=0;
         
         
         
