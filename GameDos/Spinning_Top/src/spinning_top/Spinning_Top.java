@@ -13,15 +13,19 @@ import java.util.Scanner;
  * @author Asus
  */
 public class Spinning_Top {
-        Random ladosp=new Random();
-        int caras=(int)(ladosp.nextDouble()*6+1);
-    public static void CarasPirinolaLevel1(){ //Caras Level1
+    //int coins[]={5};
+    int modenas=5;
+    int turn;
+    Random ladosp=new Random();
+    int caras=(int)(ladosp.nextDouble()*6+1);
+   public static void CarasPirinolaLevel1(){ //Caras Level1
         //int coins1=5,coins=0;
         Spinning_Top lados=new Spinning_Top();
         switch(lados.caras){
             case 1:
                 System.out.println("Pon 1");
-                Pon1L1();
+                //Pon1L1();
+                CoinsPlayL1();
                 break;
             case 2:
                 System.out.println("Pon 2");
@@ -46,10 +50,9 @@ public class Spinning_Top {
         }
     }
     
-    ////////////////////////////////////////////////////////////////
+   ////////////////////////////////////////////////////////////////
     
-    
-    public static void CarasPirinolaLevel2(){ //Caras Level2
+   public static void CarasPirinolaLevel2(){ //Caras Level2
         Spinning_Top lados=new Spinning_Top();
         switch(lados.caras){
             case 1:
@@ -79,9 +82,9 @@ public class Spinning_Top {
         }
     }
     
-    ///////////////////////////////////////////////////////////////
+   ///////////////////////////////////////////////////////////////
     
-    public static void CarasPirinolaLevel3(){ //Caras Level3
+   public static void CarasPirinolaLevel3(){ //Caras Level3
         Spinning_Top lados=new Spinning_Top();
         switch(lados.caras){
             case 1:
@@ -111,9 +114,9 @@ public class Spinning_Top {
         }
     }
     
-    ///////////////////////////////////////////////////////////////////////
+   ///////////////////////////////////////////////////////////////////////
     
-    public static void CarasPirinolaLevel4(){ //Caras Level4
+   public static void CarasPirinolaLevel4(){ //Caras Level4
         Spinning_Top lados=new Spinning_Top();
         switch(lados.caras){
             case 1:
@@ -143,12 +146,12 @@ public class Spinning_Top {
         }
     }
     
+   ///////////////////////////////////////////////////////////////////
     
     
-    
-    public static void Menu(){
+   public static void Menu(){
         Scanner reader=new Scanner(System.in);
-        Spinning_Top monedas=new Spinning_Top();
+        Spinning_Top turno=new Spinning_Top();
         int /*coins1=5,*/coins2=5,coins3=20,coins4=30,coins=0;
         System.out.println("Menú");
         System.out.println("1. 5 coins");
@@ -165,8 +168,8 @@ public class Spinning_Top {
                 System.out.println("/////////////////////////");
                 //CarasPirinola();
                 while(coins==0){
-                for(int turn=1;turn<5;turn++){
-                    System.out.println("Player "+turn);
+                for(turno.turn=1;turno.turn<5;turno.turn++){
+                    System.out.println("Player "+turno.turn);
                     CarasPirinolaLevel1();
                     //System.out.println("Coins Player "+turn+": ");
                     System.out.println("---------------------");
@@ -223,8 +226,21 @@ public class Spinning_Top {
         //}while(coins1==0);
 
     }
-    
-   public static int Pon1L1(){//Funciones Level1
+   
+   //////////////////////////////////////////////////////////////////////
+   public static void CoinsPlayL1(){
+       int monedas1=2;
+       Spinning_Top coinsplayers=new Spinning_Top();
+        while(monedas1>=0){
+            monedas1--;
+       }
+       System.out.println("arreglo: "+Integer.toString(monedas1));
+       //return coinsplayers.modenas;
+   }
+   
+   /////////////////////////////////////////////////////////////////////
+   
+   public static int Pon1L1(){//Metodos Level1
        int coins1=5;
        int acumulado=0;
        coins1=coins1-1;
@@ -286,7 +302,7 @@ public class Spinning_Top {
    
    ////////////////////////////////////////////////////////////////////////////////////7
    
-   public static int Pon1L2(){//Funciones level2
+   public static int Pon1L2(){//Metodos level2
        int coins1=10;
        int acumulado=0;
        coins1=coins1-1;
@@ -348,7 +364,7 @@ public class Spinning_Top {
    
    //////////////////////////////////////////////////////////////////
    
-   public static int Pon1L3(){//Funciones level3
+   public static int Pon1L3(){//Metodos level3
        int coins1=20;
        int acumulado=0;
        coins1=coins1-1;
@@ -410,7 +426,7 @@ public class Spinning_Top {
    
    ///////////////////////////////////////////////////////////////////////////
    
-   public static int Pon1L4(){//Funciones level4
+   public static int Pon1L4(){//Metodos level4
        int coins1=30;
        int acumulado=0;
        coins1=coins1-1;
