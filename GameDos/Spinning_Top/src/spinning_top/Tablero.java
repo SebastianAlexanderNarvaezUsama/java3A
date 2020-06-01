@@ -440,7 +440,8 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 3:
                 JLabelPiri.setText("Pon 2");
-                a=2;
+                ValidacionPon2();
+                /*a=2;
                 bank=bank+2;
                 switch (x) {
                     case 2:
@@ -457,7 +458,7 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                     default:
                         break;
-                }
+                }*/
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
@@ -573,7 +574,8 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 3:
                 JLabelPiri.setText("Pon 2");
-                a=2;
+                ValidacionPon2();
+                /*a=2;
                 bank=bank+2;
                 switch (x) {
                     case 2:
@@ -590,7 +592,7 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                     default:
                         break;
-                }
+                }*/
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
@@ -734,6 +736,53 @@ public class Tablero extends javax.swing.JFrame {
             }
         }
     }
+    
+    //////////////////////////////////////////////////Validacion de pon 2
+    
+    public void ValidacionPon2(){
+        a=2;
+        switch (x) {
+            case 2:
+                if(P1==1){
+                    P1--;
+                    bank++;
+                }else{
+                    P1=P1-a;
+                    bank=bank+2;
+                }
+                break;
+            case 3:
+                if(P2==1){
+                    P2--;
+                    bank++;
+                }else{
+                    P2=P2-a;
+                    bank=bank+2;
+                }
+                break;
+            case 4:
+                if(P3==1){
+                    P3--;
+                    bank++;
+                }else{
+                    P3=P3-a;
+                    bank=bank+2;
+                }
+                break;
+            case 1:
+                if(P4==1){
+                    P4--;
+                    bank++;
+                }else{
+                    P4=P4-a;
+                    bank=bank+2;
+                }                
+                break;
+            default:
+                break;
+        }       
+    }
+    
     
     
     /**
