@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 public class Tablero extends javax.swing.JFrame {
      //int turn=1;//variable turnos
      //int coinsp1=5,coinsp2=5,coinsp3=5,coinsp4=5;
-     int Piri=0,Coins=0,P1,P2,P3,P4,Players=4,x,bank=0;
+     int Piri=0,Coins=0,P1,P2,P3,P4,Players=4,x=1,bank=0;
      int a=0;
     /**
      * Creates new form Tablero
@@ -122,7 +122,7 @@ public class Tablero extends javax.swing.JFrame {
         JLabelTurnP.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         JLabelTurnP.setForeground(new java.awt.Color(70, 71, 62));
         JLabelTurnP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLabelTurnP.setText("#");
+        JLabelTurnP.setText("1");
         jPanel2.add(JLabelTurnP);
         JLabelTurnP.setBounds(260, 130, 100, 90);
 
@@ -219,7 +219,6 @@ public class Tablero extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButtonStop);
-
         jButtonStop.setBounds(540, 230, 200, 40);
 
         JLabelPiri.setFont(new java.awt.Font("Algerian", 0, 28)); // NOI18N
@@ -402,16 +401,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=1;
                 bank=bank+1;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1-a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2-a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3-a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4-a;                 
                         break;
                     default:
@@ -423,16 +422,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=bank;
                 bank=bank-bank;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1+a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2+a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3+a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4+a;                
                         break;
                     default:
@@ -444,16 +443,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=2;
                 bank=bank+2;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1-a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2-a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3-a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4-a;                
                         break;
                     default:
@@ -465,16 +464,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=1;
                 bank=bank-1;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1+a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2+a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3+a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4+a;                
                         break;
                     default:
@@ -492,7 +491,8 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 6:
                 JLabelPiri.setText("Toma 2");
-                a=2;
+                ValidacionToma2();
+                /*a=2;
                 bank=bank-2;
                 switch (x) {
                     case 1:
@@ -509,7 +509,7 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                     default:
                         break;
-                }
+                }*/
                 break;
             default:
                 break;   
@@ -531,16 +531,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=1;
                 bank=bank+1;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1-a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2-a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3-a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4-a;                 
                         break;
                     default:
@@ -554,16 +554,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=bank;
                 bank=bank-bank;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1+a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2+a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3+a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4+a;                
                         break;
                     default:
@@ -575,16 +575,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=2;
                 bank=bank+2;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1-a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2-a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3-a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4-a;                
                         break;
                     default:
@@ -596,16 +596,16 @@ public class Tablero extends javax.swing.JFrame {
                 a=1;
                 bank=bank-1;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1+a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2+a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3+a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4+a;                
                         break;
                     default:
@@ -623,41 +623,87 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 6:
                 JLabelPiri.setText("Toma 2");
-                a=2;
+                ValidacionToma2();
+                /*a=2;
                 bank=bank-2;
                 switch (x) {
-                    case 1:
+                    case 2:
                         P1=P1+a;
                         break;
-                    case 2:
+                    case 3:
                         P2=P2+a;
                         break;
-                    case 3:
+                    case 4:
                         P3=P3+a;
                         break;
-                    case 4:
+                    case 1:
                         P4=P4+a;                
                         break;
                     default:
                         break;
                 }
-                break;
+                break;*/
             default:
                 break;   
-      
+        }        
             JLabelBank.setText(Integer.toString(bank));
             JLabelTurnP.setText(Integer.toString(x));
             JLabelP1.setText(Integer.toString(P1));
             JLabelP2.setText(Integer.toString(P2));
             JLabelP3.setText(Integer.toString(P3));
-            JLabelP4.setText(Integer.toString(P4)); 
-        }        
+            JLabelP4.setText(Integer.toString(P4));        
     }
         
-        
-        
     }//GEN-LAST:event_jButtonStopActionPerformed
-
+ 
+    public void ValidacionToma2(){
+        if(bank==0){
+            P1=P1;P2=P2;P3=P3;P4=P4;
+            bank=0;
+        }else{
+            if(bank==1){
+                a=1;
+                bank=bank-1;
+                switch (x) {
+                    case 2:
+                        P1=P1+a;
+                        break;
+                    case 3:
+                        P2=P2+a;
+                        break;
+                    case 4:
+                        P3=P3+a;
+                        break;
+                    case 1:
+                        P4=P4+a;                
+                        break;
+                    default:
+                        break;
+                }               
+            }else{
+                a=2;
+                bank=bank-2;
+                switch (x) {
+                    case 2:
+                        P1=P1+a;
+                        break;
+                    case 3:
+                        P2=P2+a;
+                        break;
+                    case 4:
+                        P3=P3+a;
+                        break;
+                    case 1:
+                        P4=P4+a;                
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
