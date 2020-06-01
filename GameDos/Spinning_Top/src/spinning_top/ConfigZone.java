@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  * @author Asus
  */
 public class ConfigZone extends javax.swing.JFrame {
-
+    int Monedas;
     /**
      * Creates new form ConfigZone
      */
@@ -44,6 +44,7 @@ public class ConfigZone extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Spinning Top - Config Zone");
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setLayout(null);
@@ -63,7 +64,6 @@ public class ConfigZone extends javax.swing.JFrame {
         jComboBox1.setBounds(340, 210, 70, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Coins.png"))); // NOI18N
-        jLabel4.setPreferredSize(new java.awt.Dimension(300, 180));
         jPanel1.add(jLabel4);
         jLabel4.setBounds(30, 210, 300, 180);
 
@@ -99,6 +99,11 @@ public class ConfigZone extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
         jButton1.setText("Next");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(330, 400, 100, 40);
 
@@ -123,10 +128,14 @@ public class ConfigZone extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
      Coins = jComboBox1.getSelectedItem().toString();
      switch (Coins){
-        case "5" :jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/5Coins.gif")));break;
-        case "10":jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/10Coins.gif")));break;
-        case "20":jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/20Coins.gif")));break;
-        case "30":jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/30Coins.gif")));break;
+        case "5" :Monedas=5;
+            jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/5Coins.gif")));break;
+        case "10":Monedas=10;
+            jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/10Coins.gif")));break;
+        case "20":Monedas=20;
+            jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/20Coins.gif")));break;
+        case "30":Monedas=30;
+            jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/30Coins.gif")));break;
         default:   
      }
     if(Coins!=""){
@@ -141,6 +150,12 @@ public class ConfigZone extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Tablero Tablero=new Tablero();
+    this.setVisible(false);
+    Tablero.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,7 +195,7 @@ public class ConfigZone extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public static javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

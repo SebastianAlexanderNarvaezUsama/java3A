@@ -94,7 +94,7 @@ public class Carreranumerica extends javax.swing.JFrame {
          jLabelMissing_positions.setText("#");  
          jLabelReturns.setText("#");  
          jLabelPars.setText("#"); 
-         
+//sebas         
          DadosT.stop();  
          DadosS.stop(); 
     }
@@ -161,7 +161,7 @@ public class Carreranumerica extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")//sebas
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -677,7 +677,7 @@ public class Carreranumerica extends javax.swing.JFrame {
        Config Config= new Config();        
        Config.setVisible(true);      
        this.setVisible(false);
-       //jButton1.setEnabled(false);
+       //jButton1.setEnabled(//sebasfalse);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1aActionPerformed
@@ -688,7 +688,7 @@ public class Carreranumerica extends javax.swing.JFrame {
         if(Players!=0&&Level>=50){
         jButtonROLLDICE.setEnabled(true);
         
-        }          // TODO add your handling code here:
+        }          // TODO add sebas handling code here:
     }//GEN-LAST:event_jComboBox1aActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -699,7 +699,7 @@ public class Carreranumerica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* sebastian alexander narvaez usama*/
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -729,7 +729,10 @@ public class Carreranumerica extends javax.swing.JFrame {
             }
         });
     }
-
+/**
+ *
+ * @author Sebastian Alexander Narvaez Usamá
+ */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -763,4 +766,8 @@ public class Carreranumerica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
+/**
+ *
+ * @author Sebastian Alexander Narvaez Usamá
+ */
 }
