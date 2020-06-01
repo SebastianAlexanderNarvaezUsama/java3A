@@ -15,14 +15,10 @@ import javax.swing.ImageIcon;
  * @author Asus
  */
 public class Tablero extends javax.swing.JFrame {
-<<<<<<< HEAD
-     int Piri=0,Coins=0;
      //int turn=1;//variable turnos
      //int coinsp1=5,coinsp2=5,coinsp3=5,coinsp4=5;
-=======
      int Piri=0,Coins=0,P1,P2,P3,P4,Players=4,x,bank=0;
      int a=0;
->>>>>>> cbf34a714c5b982b950c4afd11e2264df1cf12aa
     /**
      * Creates new form Tablero
      */
@@ -386,9 +382,7 @@ public class Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
-<<<<<<< HEAD
-    Random n=new Random();
-=======
+
   /*  if(P1>0){
      jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png")));   
      }   
@@ -404,14 +398,10 @@ public class Tablero extends javax.swing.JFrame {
         if(x<Players){
         x++;      
         Random n=new Random();
->>>>>>> cbf34a714c5b982b950c4afd11e2264df1cf12aa
         Piri=(int)(n.nextDouble()*6+1);
         switch (Piri) {
             case 1:
                 JLabelPiri.setText("Pon 1");
-<<<<<<< HEAD
-                //Pon1();
-=======
                 a=1;
                 bank=bank+1;
                 switch (x) {
@@ -430,7 +420,6 @@ public class Tablero extends javax.swing.JFrame {
                     default:
                         break;
                 }
->>>>>>> cbf34a714c5b982b950c4afd11e2264df1cf12aa
                 break;
             case 2:
                 JLabelPiri.setText("Toma todo");
@@ -528,7 +517,7 @@ public class Tablero extends javax.swing.JFrame {
             default:
                 break;   
         }            
-                JLabelBank.setText(Integer.toString(bank));
+        JLabelBank.setText(Integer.toString(bank));
         JLabelTurnP.setText(Integer.toString(x));
         JLabelP1.setText(Integer.toString(P1));
         JLabelP2.setText(Integer.toString(P2));
@@ -561,80 +550,8 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                 }
                 break;
-<<<<<<< HEAD
-        }
-        //Turn();
-    }//GEN-LAST:event_jButtonStopActionPerformed
+        //}                                           
 
-    
-    ////////////////////////////////////////////////////Metodo turno
-    /*public void Turn(){
-        turn++;
-        if(turn==5){
-            turn-=4;
-        }
-        JLabelTurnP.setText(Integer.toString(turn));
-        System.out.println("turnos: "+turn);
-    }*/
-    
-    
-    /*public void Pon1(){
-        switch(turn){
-            case 3:
-                while(coinsp3>0){
-                    coinsp3--;
-                    break;
-                }
-                JLabelP3.setText(Integer.toString(coinsp3));
-                System.out.println("jugador 3");
-                break;
-            case 4:
-                while(coinsp4>0){
-                    coinsp4--;
-                    break;
-                }
-                JLabelP4.setText(Integer.toString(coinsp4));
-                System.out.println("jugador 4");
-                break;
-            case 1:
-                while(coinsp1>0){
-                    coinsp1--;
-                    break;
-                }
-                JLabelP1.setText(Integer.toString(coinsp1));
-                System.out.println("jugador 1");
-                break;
-            case 2:
-                while(coinsp2>0){
-                    coinsp2--;
-                    break;
-                }
-                JLabelP2.setText(Integer.toString(coinsp2));
-                System.out.println("jugador 2");
-                break;
-            default:
-                break;
-        }
-    }*/
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-=======
             case 2:
                 JLabelPiri.setText("Toma todo");
                 a=bank;
@@ -730,21 +647,20 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             default:
                 break;   
-        } 
-                JLabelBank.setText(Integer.toString(bank));
-        JLabelTurnP.setText(Integer.toString(x));
-        JLabelP1.setText(Integer.toString(P1));
-        JLabelP2.setText(Integer.toString(P2));
-        JLabelP3.setText(Integer.toString(P3));
-        JLabelP4.setText(Integer.toString(P4)); 
+      
+            JLabelBank.setText(Integer.toString(bank));
+            JLabelTurnP.setText(Integer.toString(x));
+            JLabelP1.setText(Integer.toString(P1));
+            JLabelP2.setText(Integer.toString(P2));
+            JLabelP3.setText(Integer.toString(P3));
+            JLabelP4.setText(Integer.toString(P4)); 
         }        
-    
+    }
         
         
         
     }//GEN-LAST:event_jButtonStopActionPerformed
 
->>>>>>> cbf34a714c5b982b950c4afd11e2264df1cf12aa
     /**
      * @param args the command line arguments
      */
