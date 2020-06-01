@@ -219,11 +219,8 @@ public class Tablero extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButtonStop);
-<<<<<<< HEAD
-        jButtonStop.setBounds(540, 220, 200, 40);
-=======
+
         jButtonStop.setBounds(540, 230, 200, 40);
->>>>>>> cbf34a714c5b982b950c4afd11e2264df1cf12aa
 
         JLabelPiri.setFont(new java.awt.Font("Algerian", 0, 28)); // NOI18N
         JLabelPiri.setForeground(new java.awt.Color(255, 255, 255));
@@ -703,11 +700,7 @@ public class Tablero extends javax.swing.JFrame {
     public static javax.swing.JLabel JLabelP3;
     public static javax.swing.JLabel JLabelP4;
     private javax.swing.JLabel JLabelPiri;
-<<<<<<< HEAD
-    private javax.swing.JLabel JLabelTurnP;
-=======
     public static javax.swing.JLabel JLabelTurnP;
->>>>>>> cbf34a714c5b982b950c4afd11e2264df1cf12aa
     private javax.swing.JButton jButtonStop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
