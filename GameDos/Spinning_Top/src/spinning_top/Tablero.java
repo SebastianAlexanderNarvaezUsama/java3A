@@ -16,6 +16,8 @@ import javax.swing.ImageIcon;
  */
 public class Tablero extends javax.swing.JFrame {
      int Piri=0,Coins=0;
+     int turn=1;//variable turnos
+     int coinsp1=5,coinsp2=5,coinsp3=5,coinsp4=5;
     /**
      * Creates new form Tablero
      */
@@ -60,7 +62,7 @@ public class Tablero extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnStop = new javax.swing.JButton();
         JLabelPiri = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -197,17 +199,17 @@ public class Tablero extends javax.swing.JFrame {
         jPanel2.add(jLabel15);
         jLabel15.setBounds(440, 450, 150, 80);
 
-        jButton2.setBackground(new java.awt.Color(212, 175, 55));
-        jButton2.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
-        jButton2.setText("Stop");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnStop.setBackground(new java.awt.Color(212, 175, 55));
+        btnStop.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
+        btnStop.setText("Stop");
+        btnStop.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnStopActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
-        jButton2.setBounds(540, 220, 200, 40);
+        jPanel2.add(btnStop);
+        btnStop.setBounds(540, 220, 200, 40);
 
         JLabelPiri.setFont(new java.awt.Font("Algerian", 0, 28)); // NOI18N
         JLabelPiri.setForeground(new java.awt.Color(255, 255, 255));
@@ -357,12 +359,13 @@ public class Tablero extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopActionPerformed
     Random n=new Random();
         Piri=(int)(n.nextDouble()*6+1);
         switch (Piri) {
             case 1:
                 JLabelPiri.setText("Pon 1");
+                Pon1();
                 break;
             case 2:
                 JLabelPiri.setText("Toma todo");
@@ -382,9 +385,77 @@ public class Tablero extends javax.swing.JFrame {
             default:
                 break;
         }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Turn();
+    }//GEN-LAST:event_btnStopActionPerformed
 
+    
+    ////////////////////////////////////////////////////Metodo turno
+    public void Turn(){
+        turn++;
+        if(turn==5){
+            turn-=4;
+        }
+        JLabelTurnP.setText(Integer.toString(turn));
+        System.out.println("turnos: "+turn);
+    }
+    
+    
+    public void Pon1(){
+        switch(turn){
+            case 3:
+                while(coinsp3>0){
+                    coinsp3--;
+                    break;
+                }
+                JLabelP3.setText(Integer.toString(coinsp3));
+                System.out.println("jugador 3");
+                break;
+            case 4:
+                while(coinsp4>0){
+                    coinsp4--;
+                    break;
+                }
+                JLabelP4.setText(Integer.toString(coinsp4));
+                System.out.println("jugador 4");
+                break;
+            case 1:
+                while(coinsp1>0){
+                    coinsp1--;
+                    break;
+                }
+                JLabelP1.setText(Integer.toString(coinsp1));
+                System.out.println("jugador 1");
+                break;
+            case 2:
+                while(coinsp2>0){
+                    coinsp2--;
+                    break;
+                }
+                JLabelP2.setText(Integer.toString(coinsp2));
+                System.out.println("jugador 2");
+                break;
+            default:
+                break;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -428,7 +499,7 @@ public class Tablero extends javax.swing.JFrame {
     public static javax.swing.JLabel JLabelP4;
     private javax.swing.JLabel JLabelPiri;
     private javax.swing.JLabel JLabelTurnP;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnStop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
