@@ -16,8 +16,8 @@ import javax.swing.ImageIcon;
  */
 public class Tablero extends javax.swing.JFrame {
      int Piri=0,Coins=0;
-     int turn=1;//variable turnos
-     int coinsp1=5,coinsp2=5,coinsp3=5,coinsp4=5;
+     //int turn=1;//variable turnos
+     //int coinsp1=5,coinsp2=5,coinsp3=5,coinsp4=5;
     /**
      * Creates new form Tablero
      */
@@ -62,7 +62,7 @@ public class Tablero extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        btnStop = new javax.swing.JButton();
+        jButtonStop = new javax.swing.JButton();
         JLabelPiri = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -199,17 +199,17 @@ public class Tablero extends javax.swing.JFrame {
         jPanel2.add(jLabel15);
         jLabel15.setBounds(440, 450, 150, 80);
 
-        btnStop.setBackground(new java.awt.Color(212, 175, 55));
-        btnStop.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
-        btnStop.setText("Stop");
-        btnStop.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnStop.addActionListener(new java.awt.event.ActionListener() {
+        jButtonStop.setBackground(new java.awt.Color(212, 175, 55));
+        jButtonStop.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
+        jButtonStop.setText("Stop");
+        jButtonStop.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStopActionPerformed(evt);
+                jButtonStopActionPerformed(evt);
             }
         });
-        jPanel2.add(btnStop);
-        btnStop.setBounds(540, 220, 200, 40);
+        jPanel2.add(jButtonStop);
+        jButtonStop.setBounds(540, 220, 200, 40);
 
         JLabelPiri.setFont(new java.awt.Font("Algerian", 0, 28)); // NOI18N
         JLabelPiri.setForeground(new java.awt.Color(255, 255, 255));
@@ -359,13 +359,13 @@ public class Tablero extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void btnStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopActionPerformed
+    private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
     Random n=new Random();
         Piri=(int)(n.nextDouble()*6+1);
         switch (Piri) {
             case 1:
                 JLabelPiri.setText("Pon 1");
-                Pon1();
+                //Pon1();
                 break;
             case 2:
                 JLabelPiri.setText("Toma todo");
@@ -385,22 +385,22 @@ public class Tablero extends javax.swing.JFrame {
             default:
                 break;
         }
-        Turn();
-    }//GEN-LAST:event_btnStopActionPerformed
+        //Turn();
+    }//GEN-LAST:event_jButtonStopActionPerformed
 
     
     ////////////////////////////////////////////////////Metodo turno
-    public void Turn(){
+    /*public void Turn(){
         turn++;
         if(turn==5){
             turn-=4;
         }
         JLabelTurnP.setText(Integer.toString(turn));
         System.out.println("turnos: "+turn);
-    }
+    }*/
     
     
-    public void Pon1(){
+    /*public void Pon1(){
         switch(turn){
             case 3:
                 while(coinsp3>0){
@@ -437,7 +437,7 @@ public class Tablero extends javax.swing.JFrame {
             default:
                 break;
         }
-    }
+    }*/
     
     
     
@@ -499,7 +499,7 @@ public class Tablero extends javax.swing.JFrame {
     public static javax.swing.JLabel JLabelP4;
     private javax.swing.JLabel JLabelPiri;
     private javax.swing.JLabel JLabelTurnP;
-    private javax.swing.JButton btnStop;
+    private javax.swing.JButton jButtonStop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
