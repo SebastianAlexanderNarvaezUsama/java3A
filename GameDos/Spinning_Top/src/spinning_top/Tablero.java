@@ -461,7 +461,8 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
-                a=1;
+                ValidacionToma1();
+                /*a=1;
                 bank=bank-1;
                 switch (x) {
                     case 2:
@@ -478,7 +479,7 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                     default:
                         break;
-                }
+                }*/
                 break;
             case 5:
                 JLabelPiri.setText("Todos ponen");
@@ -593,7 +594,8 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
-                a=1;
+                ValidacionToma1();
+                /*a=1;
                 bank=bank-1;
                 switch (x) {
                     case 2:
@@ -610,7 +612,7 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                     default:
                         break;
-                }
+                }*/
                 break;
             case 5:
                 JLabelPiri.setText("Todos ponen");
@@ -641,8 +643,8 @@ public class Tablero extends javax.swing.JFrame {
                         break;
                     default:
                         break;
-                }
-                break;*/
+                }*/
+                break;
             default:
                 break;   
         }        
@@ -656,6 +658,8 @@ public class Tablero extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonStopActionPerformed
  
+    
+    ///////////////////////////////////////////////////Validacion de toma 2
     public void ValidacionToma2(){
         if(bank==0){
             P1=P1;P2=P2;P3=P3;P4=P4;
@@ -699,6 +703,34 @@ public class Tablero extends javax.swing.JFrame {
                     default:
                         break;
                 }
+            }
+        }
+    }
+    
+    //////////////////////////////////////////////////Validacion de toma 1
+    
+    public void ValidacionToma1(){
+        if(bank==0){
+            P1=P1;P2=P2;P3=P3;P4=P4;
+            bank=0;
+        }else{
+            a=1;
+            bank--;
+            switch (x) {
+                case 2:
+                    P1=P1+a;
+                    break;
+                case 3:
+                    P2=P2+a;
+                    break;
+                case 4:
+                    P3=P3+a;
+                    break;
+                case 1:
+                    P4=P4+a;                
+                    break;
+                default:
+                    break;
             }
         }
     }
