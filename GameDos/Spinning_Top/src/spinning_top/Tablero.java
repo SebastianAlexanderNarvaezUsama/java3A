@@ -16,7 +16,8 @@ import javax.swing.ImageIcon;
  */
 public class Tablero extends javax.swing.JFrame {
      int Piri=0,Coins=0,P1,P2,P3,P4,Players=4,x,bank=0;
-     int a=0;
+     int a=0,over=0;
+     int p=0,o=0,i=0,u=0;
     /**
      * Creates new form Tablero
      */
@@ -56,13 +57,13 @@ public class Tablero extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         JLabelP3 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabelp4 = new javax.swing.JLabel();
+        jLabelp2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelp1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabelp3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -152,21 +153,21 @@ public class Tablero extends javax.swing.JFrame {
         jPanel2.add(jLabel17);
         jLabel17.setBounds(120, 30, 120, 120);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player 4.png"))); // NOI18N
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(650, 290, 130, 160);
+        jLabelp4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player 4.png"))); // NOI18N
+        jPanel2.add(jLabelp4);
+        jLabelp4.setBounds(650, 290, 130, 160);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player 2.png"))); // NOI18N
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(200, 290, 130, 160);
+        jLabelp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player 2.png"))); // NOI18N
+        jPanel2.add(jLabelp2);
+        jLabelp2.setBounds(200, 290, 130, 160);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bank.png"))); // NOI18N
         jPanel2.add(jLabel9);
         jLabel9.setBounds(20, 60, 120, 80);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player1.png"))); // NOI18N
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(10, 290, 130, 160);
+        jLabelp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player1.png"))); // NOI18N
+        jPanel2.add(jLabelp1);
+        jLabelp1.setBounds(10, 290, 130, 160);
 
         jLabel18.setFont(new java.awt.Font("Palatino Linotype", 0, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(70, 71, 62));
@@ -182,9 +183,9 @@ public class Tablero extends javax.swing.JFrame {
         jPanel2.add(jLabel16);
         jLabel16.setBounds(220, 30, 120, 120);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player 3.png"))); // NOI18N
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(470, 290, 130, 160);
+        jLabelp3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Player 3.png"))); // NOI18N
+        jPanel2.add(jLabelp3);
+        jLabelp3.setBounds(470, 290, 130, 160);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Table_piri.gif"))); // NOI18N
         jPanel2.add(jLabel6);
@@ -374,62 +375,130 @@ public class Tablero extends javax.swing.JFrame {
         ConfigZone.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
+public void Valide(){
+   if(P1>P2&&P1>P3&&P1>P4&&P2<=0&&P3<=0&&P4<=0){
+    Wins Wins = new Wins(); 
+    Wins.setVisible(true);
+    
+   }
+       if(P2>P1&&P2>P3&&P2>P4&&P1<=0&&P3<=0&&P4<=0){
+        Wins Wins = new Wins(); 
+        Wins.setVisible(true);
+       }
+           if(P3>P1&&P3>P2&&P3>P4&&P1<=0&&P2<=0&&P4<=0){
+            Wins Wins = new Wins(); 
+            Wins.setVisible(true);
+           }
+               if(P4>P1&&P4>P2&&P4>P3&&P1<=0&&P2<=0&&P3<=0){
+                Wins Wins = new Wins(); 
+                Wins.setVisible(true);
+               }
+     
+}
+public void pon1(){
+    a=1;
+    bank=bank+1;    
+}
+public void Tomatodo(){
+    a=bank;
+    bank=bank-bank;    
+}
+public void Pon2(){
+    a=2;
+    bank=bank+2;                   
+}
+public void toma1(){
+    a=1;
+    bank=bank-1;
+}
+public void todosponen(){
+    a=1;
+    bank=bank+4;  
+}
+public void toma2(){
+    a=2;
+    bank=bank-2; 
+}
     private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
-  /*  if(P1>0){
-     jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png")));   
-     }   
-     if(P2>0){
-     jLabel5.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png")));    
-     }
-     if(P3>0){
-     jLabel7.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png")));    
-     }
-     if(P4>0){
-     jLabel3.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png")));    
-     }     */  
+
         if(x<Players){
         x++;      
         Random n=new Random();
         Piri=(int)(n.nextDouble()*6+1);
         switch (Piri) {
             case 1:
-                JLabelPiri.setText("Pon 1");
-                a=1;
-                bank=bank+1;
+                JLabelPiri.setText("Pon 1");               
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        pon1();    
                         P1=P1-a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        pon1();    
                         P2=P2-a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        pon1();
                         P3=P3-a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 4:
-                        P4=P4-a;                 
+                        if(P4>0){
+                        pon1();
+                        P4=P4-a;
+                        }else if (P1<=0){
+                        
+                        }                 
                         break;
                     default:
                         break;
                 }
                 break;
             case 2:
-                JLabelPiri.setText("Toma todo");
-                a=bank;
-                bank=bank-bank;
+                JLabelPiri.setText("Toma todo");               
                 switch (x) {
                     case 1:
+                       if(P1>0){
+                        Tomatodo();
                         P1=P1+a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        Tomatodo();
                         P2=P2+a;
+                        }else if (P2<=0){
+                        
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        Tomatodo();
                         P3=P3+a;
+                        }else if (P3<=0){
+                        
+                        }
                         break;
                     case 4:
-                        P4=P4+a;                
+                        if(P4>0){
+                        Tomatodo();
+                        P4=P4+a;
+                        }else if (P4<=0){
+                        
+                        }                
                         break;
                     default:
                         break;
@@ -437,20 +506,38 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 3:
                 JLabelPiri.setText("Pon 2");
-                a=2;
-                bank=bank+2;
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        Pon2();
                         P1=P1-a;
+                        }else if (P1<=0){
+                           
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        Pon2();
                         P2=P2-a;
+                        }else if (P2<=0){
+                           
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        Pon2();
                         P3=P3-a;
+                        }else if (P3<=0){
+                           
+                        }
                         break;
                     case 4:
-                        P4=P4-a;                
+                        if(P4>0){
+                        Pon2();
+                        P4=P4-a;
+                        }else if (P4<=0){
+                           
+                        }                
                         break;
                     default:
                         break;
@@ -458,20 +545,39 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
-                a=1;
-                bank=bank-1;
+
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        toma1();
                         P1=P1+a;
+                        }else if (P1<=0){
+                           
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        toma1();
                         P2=P2+a;
+                        }else if (P2<=0){
+                           
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        toma1();
                         P3=P3+a;
+                        }else if (P3<=0){
+                           
+                        }
                         break;
                     case 4:
-                        P4=P4+a;                
+                        if(P4>0){
+                        toma1();
+                        P4=P4+a;
+                        }else if (P4<=0){
+                           
+                        }               
                         break;
                     default:
                         break;
@@ -479,29 +585,62 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 5:
                 JLabelPiri.setText("Todos ponen");
-                a=1;
-                bank=bank+4;
-                P1=P1-a;
-                P2=P2-a;
-                P3=P3-a;
-                P4=P4-a;
+                   todosponen(); 
+                if(P1>0){
+                   P1=P1-a;
+                   }else if (P1<=0){
+                      
+                   }
+                if(P2>0){
+                   P2=P2-a;
+                   }else if (P2<=0){
+                      
+                   }
+                if(P3>0){
+                   P3=P3-a;
+                   }else if (P3<=0){
+                      
+                   }
+                if(P4>0){
+                   P4=P4-a;
+                   }else if (P4<=0){
+                      
+                   }
                 break;
             case 6:
                 JLabelPiri.setText("Toma 2");
-                a=2;
-                bank=bank-2;
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        toma2();    
                         P1=P1+a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        toma2();
                         P2=P2+a;
+                        }else if (P2<=0){
+                        
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        toma2();
                         P3=P3+a;
+                        }else if (P3<=0){
+                        
+                        }
                         break;
                     case 4:
-                        P4=P4+a;                
+                        if(P4>0){
+                        toma2();
+                        P4=P4+a;
+                        }else if (P4<=0){
+                        
+                        }                
                         break;
                     default:
                         break;
@@ -510,12 +649,37 @@ public class Tablero extends javax.swing.JFrame {
             default:
                 break;   
         }            
-                JLabelBank.setText(Integer.toString(bank));
-        JLabelTurnP.setText(Integer.toString(x));
+        
+        JLabelBank.setText(Integer.toString(bank));
+        if(P1>0){
         JLabelP1.setText(Integer.toString(P1));
+        }else if(P1<=0){
+        jLabelp1.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png"))); 
+        JLabelP1.setText("X");
+        p=1;
+        }
+        if(P2>0){
         JLabelP2.setText(Integer.toString(P2));
+        }else if(P2<=0){
+        jLabelp2.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png"))); 
+        JLabelP2.setText("X");
+        o=1;
+        }
+        if(P3>0){
         JLabelP3.setText(Integer.toString(P3));
+        }else if(P3<=0){
+        jLabelp3.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png"))); 
+        JLabelP3.setText("X");
+        i=1;
+        }
+        if(P4>0){
         JLabelP4.setText(Integer.toString(P4));
+        }else if(P4<=0){
+        jLabelp4.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png"))); 
+        JLabelP4.setText("X");
+        u=1;
+        }       
+        JLabelTurnP.setText(Integer.toString(x));
         
         }else{
         x=1;      
@@ -523,42 +687,78 @@ public class Tablero extends javax.swing.JFrame {
         Piri=(int)(n.nextDouble()*6+1);
         switch (Piri) {
             case 1:
-                JLabelPiri.setText("Pon 1");
-                a=1;
-                bank=bank+1;
+                JLabelPiri.setText("Pon 1");               
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        pon1();    
                         P1=P1-a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        pon1();    
                         P2=P2-a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        pon1();
                         P3=P3-a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 4:
-                        P4=P4-a;                 
+                        if(P4>0){
+                        pon1();
+                        P4=P4-a;
+                        }else if (P1<=0){
+                        
+                        }                 
                         break;
                     default:
                         break;
                 }
                 break;
             case 2:
-                JLabelPiri.setText("Toma todo");
-                a=bank;
-                bank=bank-bank;
+                JLabelPiri.setText("Toma todo");               
                 switch (x) {
                     case 1:
+                       if(P1>0){
+                        Tomatodo();
                         P1=P1+a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        Tomatodo();
                         P2=P2+a;
+                        }else if (P2<=0){
+                        
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        Tomatodo();
                         P3=P3+a;
+                        }else if (P3<=0){
+                        
+                        }
                         break;
                     case 4:
-                        P4=P4+a;                
+                        if(P4>0){
+                        Tomatodo();
+                        P4=P4+a;
+                        }else if (P4<=0){
+                        
+                        }                
                         break;
                     default:
                         break;
@@ -566,20 +766,38 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 3:
                 JLabelPiri.setText("Pon 2");
-                a=2;
-                bank=bank+2;
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        Pon2();
                         P1=P1-a;
+                        }else if (P1<=0){
+                           
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        Pon2();
                         P2=P2-a;
+                        }else if (P2<=0){
+                           
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        Pon2();
                         P3=P3-a;
+                        }else if (P3<=0){
+                           
+                        }
                         break;
                     case 4:
-                        P4=P4-a;                
+                        if(P4>0){
+                        Pon2();
+                        P4=P4-a;
+                        }else if (P4<=0){
+                           
+                        }                
                         break;
                     default:
                         break;
@@ -587,20 +805,39 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
-                a=1;
-                bank=bank-1;
+
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        toma1();
                         P1=P1+a;
+                        }else if (P1<=0){
+                           
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        toma1();
                         P2=P2+a;
+                        }else if (P2<=0){
+                           
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        toma1();
                         P3=P3+a;
+                        }else if (P3<=0){
+                           
+                        }
                         break;
                     case 4:
-                        P4=P4+a;                
+                        if(P4>0){
+                        toma1();
+                        P4=P4+a;
+                        }else if (P4<=0){
+                           
+                        }               
                         break;
                     default:
                         break;
@@ -608,29 +845,62 @@ public class Tablero extends javax.swing.JFrame {
                 break;
             case 5:
                 JLabelPiri.setText("Todos ponen");
-                a=1;
-                bank=bank+4;
-                P1=P1-a;
-                P2=P2-a;
-                P3=P3-a;
-                P4=P4-a;
+                   todosponen(); 
+                if(P1>0){
+                   P1=P1-a;
+                   }else if (P1<=0){
+                      
+                   }
+                if(P2>0){
+                   P2=P2-a;
+                   }else if (P2<=0){
+                      
+                   }
+                if(P3>0){
+                   P3=P3-a;
+                   }else if (P3<=0){
+                      
+                   }
+                if(P4>0){
+                   P4=P4-a;
+                   }else if (P4<=0){
+                      
+                   }
                 break;
             case 6:
                 JLabelPiri.setText("Toma 2");
-                a=2;
-                bank=bank-2;
                 switch (x) {
                     case 1:
+                        if(P1>0){
+                        toma2();    
                         P1=P1+a;
+                        }else if (P1<=0){
+                        
+                        }
                         break;
                     case 2:
+                        if(P2>0){
+                        toma2();
                         P2=P2+a;
+                        }else if (P2<=0){
+                        
+                        }
                         break;
                     case 3:
+                        if(P3>0){
+                        toma2();
                         P3=P3+a;
+                        }else if (P3<=0){
+                        
+                        }
                         break;
                     case 4:
-                        P4=P4+a;                
+                        if(P4>0){
+                        toma2();
+                        P4=P4+a;
+                        }else if (P4<=0){
+                        
+                        }                
                         break;
                     default:
                         break;
@@ -640,16 +910,38 @@ public class Tablero extends javax.swing.JFrame {
                 break;   
         } 
                 JLabelBank.setText(Integer.toString(bank));
-        JLabelTurnP.setText(Integer.toString(x));
+        
+        if(P1>0){
         JLabelP1.setText(Integer.toString(P1));
+        }else if(P1<=0){
+        jLabelp1.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png"))); 
+        JLabelP1.setText("X");
+        p=1;
+        }
+        if(P2>0){
         JLabelP2.setText(Integer.toString(P2));
+        }else if(P2<=0){
+        jLabelp2.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png"))); 
+        JLabelP2.setText("X");
+        o=1;
+        }
+        if(P3>0){
         JLabelP3.setText(Integer.toString(P3));
-        JLabelP4.setText(Integer.toString(P4)); 
-        }        
-    
-        
-        
-        
+        }else if(P3<=0){
+        jLabelp3.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png"))); 
+        JLabelP3.setText("X");
+        i=1;
+        }
+        if(P4>0){
+        JLabelP4.setText(Integer.toString(P4));
+        }else if(P4<=0){
+        jLabelp4.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png"))); 
+        JLabelP4.setText("X");
+        u=1;
+        } 
+        JLabelTurnP.setText(Integer.toString(x));
+        } 
+       Valide(); 
     }//GEN-LAST:event_jButtonStopActionPerformed
 
     /**
@@ -706,13 +998,13 @@ public class Tablero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelp1;
+    private javax.swing.JLabel jLabelp2;
+    private javax.swing.JLabel jLabelp3;
+    private javax.swing.JLabel jLabelp4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
