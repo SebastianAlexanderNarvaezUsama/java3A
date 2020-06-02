@@ -15,16 +15,9 @@ import javax.swing.ImageIcon;
  * @author Asus
  */
 public class Tablero extends javax.swing.JFrame {
-<<<<<<< HEAD
      int Piri=0,Coins=0,P1,P2,P3,P4,Players=4,x,bank=0;
      int a=0,over=0;
      int p=0,o=0,i=0,u=0;
-=======
-     //int turn=1;//variable turnos
-     //int coinsp1=5,coinsp2=5,coinsp3=5,coinsp4=5;
-     int Piri=0,Coins=0,P1,P2,P3,P4,Players=4,x=1,bank=0;
-     int a=0;
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
     /**
      * Creates new form Tablero
      */
@@ -128,7 +121,7 @@ public class Tablero extends javax.swing.JFrame {
         JLabelTurnP.setFont(new java.awt.Font("Palatino Linotype", 1, 36)); // NOI18N
         JLabelTurnP.setForeground(new java.awt.Color(70, 71, 62));
         JLabelTurnP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLabelTurnP.setText("1");
+        JLabelTurnP.setText("#");
         jPanel2.add(JLabelTurnP);
         JLabelTurnP.setBounds(260, 130, 100, 90);
 
@@ -428,21 +421,6 @@ public void toma2(){
 }
     private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
 
-<<<<<<< HEAD
-=======
-  /*  if(P1>0){
-     jLabel4.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png")));   
-     }   
-     if(P2>0){
-     jLabel5.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png")));    
-     }
-     if(P3>0){
-     jLabel7.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png")));    
-     }
-     if(P4>0){
-     jLabel3.setIcon(new ImageIcon(getClass().getResource("/Icons/sombrader.png")));    
-     }     */  
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
         if(x<Players){
         x++;      
         Random n=new Random();
@@ -451,43 +429,30 @@ public void toma2(){
             case 1:
                 JLabelPiri.setText("Pon 1");               
                 switch (x) {
-<<<<<<< HEAD
                     case 1:
                         if(P1>0){
                         pon1();    
-=======
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1-a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         pon1();    
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2-a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         pon1();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3-a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         pon1();
@@ -495,10 +460,6 @@ public void toma2(){
                         }else if (P1<=0){
                         
                         }                 
-=======
-                    case 1:
-                        P4=P4-a;                 
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
@@ -507,43 +468,30 @@ public void toma2(){
             case 2:
                 JLabelPiri.setText("Toma todo");               
                 switch (x) {
-<<<<<<< HEAD
                     case 1:
                        if(P1>0){
                         Tomatodo();
-=======
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1+a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         Tomatodo();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2+a;
                         }else if (P2<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         Tomatodo();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3+a;
                         }else if (P3<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         Tomatodo();
@@ -551,10 +499,6 @@ public void toma2(){
                         }else if (P4<=0){
                         
                         }                
-=======
-                    case 1:
-                        P4=P4+a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
@@ -562,48 +506,31 @@ public void toma2(){
                 break;
             case 3:
                 JLabelPiri.setText("Pon 2");
-<<<<<<< HEAD
                 switch (x) {
                     case 1:
                         if(P1>0){
                         Pon2();
-=======
-                ValidacionPon2();
-                /*a=2;
-                bank=bank+2;
-                switch (x) {
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1-a;
                         }else if (P1<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         Pon2();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2-a;
                         }else if (P2<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         Pon2();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3-a;
                         }else if (P3<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         Pon2();
@@ -611,60 +538,39 @@ public void toma2(){
                         }else if (P4<=0){
                            
                         }                
-=======
-                    case 1:
-                        P4=P4-a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
-                }*/
+                }
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
-<<<<<<< HEAD
 
                 switch (x) {
                     case 1:
                         if(P1>0){
                         toma1();
-=======
-                ValidacionToma1();
-                /*a=1;
-                bank=bank-1;
-                switch (x) {
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1+a;
                         }else if (P1<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         toma1();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2+a;
                         }else if (P2<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         toma1();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3+a;
                         }else if (P3<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         toma1();
@@ -672,14 +578,10 @@ public void toma2(){
                         }else if (P4<=0){
                            
                         }               
-=======
-                    case 1:
-                        P4=P4+a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
-                }*/
+                }
                 break;
             case 5:
                 JLabelPiri.setText("Todos ponen");
@@ -707,12 +609,6 @@ public void toma2(){
                 break;
             case 6:
                 JLabelPiri.setText("Toma 2");
-<<<<<<< HEAD
-=======
-                ValidacionToma2();
-                /*a=2;
-                bank=bank-2;
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                 switch (x) {
                     case 1:
                         if(P1>0){
@@ -748,19 +644,14 @@ public void toma2(){
                         break;
                     default:
                         break;
-                }*/
+                }
                 break;
             default:
                 break;   
         }            
-<<<<<<< HEAD
         
         JLabelBank.setText(Integer.toString(bank));
         if(P1>0){
-=======
-        JLabelBank.setText(Integer.toString(bank));
-        JLabelTurnP.setText(Integer.toString(x));
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
         JLabelP1.setText(Integer.toString(P1));
         }else if(P1<=0){
         jLabelp1.setIcon(new ImageIcon(getClass().getResource("/Icons/sombraiz.png"))); 
@@ -798,43 +689,30 @@ public void toma2(){
             case 1:
                 JLabelPiri.setText("Pon 1");               
                 switch (x) {
-<<<<<<< HEAD
                     case 1:
                         if(P1>0){
                         pon1();    
-=======
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1-a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         pon1();    
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2-a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         pon1();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3-a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         pon1();
@@ -842,57 +720,38 @@ public void toma2(){
                         }else if (P1<=0){
                         
                         }                 
-=======
-                    case 1:
-                        P4=P4-a;                 
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
                 }
                 break;
-        //}                                           
-
             case 2:
                 JLabelPiri.setText("Toma todo");               
                 switch (x) {
-<<<<<<< HEAD
                     case 1:
                        if(P1>0){
                         Tomatodo();
-=======
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1+a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         Tomatodo();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2+a;
                         }else if (P2<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         Tomatodo();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3+a;
                         }else if (P3<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         Tomatodo();
@@ -900,10 +759,6 @@ public void toma2(){
                         }else if (P4<=0){
                         
                         }                
-=======
-                    case 1:
-                        P4=P4+a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
@@ -911,48 +766,31 @@ public void toma2(){
                 break;
             case 3:
                 JLabelPiri.setText("Pon 2");
-<<<<<<< HEAD
                 switch (x) {
                     case 1:
                         if(P1>0){
                         Pon2();
-=======
-                ValidacionPon2();
-                /*a=2;
-                bank=bank+2;
-                switch (x) {
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1-a;
                         }else if (P1<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         Pon2();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2-a;
                         }else if (P2<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         Pon2();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3-a;
                         }else if (P3<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         Pon2();
@@ -960,60 +798,39 @@ public void toma2(){
                         }else if (P4<=0){
                            
                         }                
-=======
-                    case 1:
-                        P4=P4-a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
-                }*/
+                }
                 break;
             case 4:
                 JLabelPiri.setText("Toma 1");
-<<<<<<< HEAD
 
                 switch (x) {
                     case 1:
                         if(P1>0){
                         toma1();
-=======
-                ValidacionToma1();
-                /*a=1;
-                bank=bank-1;
-                switch (x) {
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1+a;
                         }else if (P1<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         toma1();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2+a;
                         }else if (P2<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         toma1();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3+a;
                         }else if (P3<=0){
                            
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         toma1();
@@ -1021,14 +838,10 @@ public void toma2(){
                         }else if (P4<=0){
                            
                         }               
-=======
-                    case 1:
-                        P4=P4+a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
-                }*/
+                }
                 break;
             case 5:
                 JLabelPiri.setText("Todos ponen");
@@ -1056,48 +869,31 @@ public void toma2(){
                 break;
             case 6:
                 JLabelPiri.setText("Toma 2");
-<<<<<<< HEAD
                 switch (x) {
                     case 1:
                         if(P1>0){
                         toma2();    
-=======
-                ValidacionToma2();
-                /*a=2;
-                bank=bank-2;
-                switch (x) {
-                    case 2:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P1=P1+a;
                         }else if (P1<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 2:
                         if(P2>0){
                         toma2();
-=======
-                    case 3:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P2=P2+a;
                         }else if (P2<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 3:
                         if(P3>0){
                         toma2();
-=======
-                    case 4:
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         P3=P3+a;
                         }else if (P3<=0){
                         
                         }
                         break;
-<<<<<<< HEAD
                     case 4:
                         if(P4>0){
                         toma2();
@@ -1105,18 +901,13 @@ public void toma2(){
                         }else if (P4<=0){
                         
                         }                
-=======
-                    case 1:
-                        P4=P4+a;                
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
                         break;
                     default:
                         break;
-                }*/
+                }
                 break;
             default:
                 break;   
-<<<<<<< HEAD
         } 
                 JLabelBank.setText(Integer.toString(bank));
         
@@ -1151,144 +942,8 @@ public void toma2(){
         JLabelTurnP.setText(Integer.toString(x));
         } 
        Valide(); 
-=======
-        }        
-            JLabelBank.setText(Integer.toString(bank));
-            JLabelTurnP.setText(Integer.toString(x));
-            JLabelP1.setText(Integer.toString(P1));
-            JLabelP2.setText(Integer.toString(P2));
-            JLabelP3.setText(Integer.toString(P3));
-            JLabelP4.setText(Integer.toString(P4));        
-    }
-        
->>>>>>> 2ad06b552b58f9c81d6c164f0a37cbf666e24a63
     }//GEN-LAST:event_jButtonStopActionPerformed
- 
-    
-    ///////////////////////////////////////////////////Validacion de toma 2
-    public void ValidacionToma2(){
-        if(bank==0){
-            P1=P1;P2=P2;P3=P3;P4=P4;
-            bank=0;
-        }else{
-            if(bank==1){
-                a=1;
-                bank=bank-1;
-                switch (x) {
-                    case 2:
-                        P1=P1+a;
-                        break;
-                    case 3:
-                        P2=P2+a;
-                        break;
-                    case 4:
-                        P3=P3+a;
-                        break;
-                    case 1:
-                        P4=P4+a;                
-                        break;
-                    default:
-                        break;
-                }               
-            }else{
-                a=2;
-                bank=bank-2;
-                switch (x) {
-                    case 2:
-                        P1=P1+a;
-                        break;
-                    case 3:
-                        P2=P2+a;
-                        break;
-                    case 4:
-                        P3=P3+a;
-                        break;
-                    case 1:
-                        P4=P4+a;                
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-    }
-    
-    //////////////////////////////////////////////////Validacion de toma 1
-    
-    public void ValidacionToma1(){
-        if(bank==0){
-            P1=P1;P2=P2;P3=P3;P4=P4;
-            bank=0;
-        }else{
-            a=1;
-            bank--;
-            switch (x) {
-                case 2:
-                    P1=P1+a;
-                    break;
-                case 3:
-                    P2=P2+a;
-                    break;
-                case 4:
-                    P3=P3+a;
-                    break;
-                case 1:
-                    P4=P4+a;                
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-    
-    //////////////////////////////////////////////////Validacion de pon 2
-    
-    public void ValidacionPon2(){
-        a=2;
-        switch (x) {
-            case 2:
-                if(P1==1){
-                    P1--;
-                    bank++;
-                }else{
-                    P1=P1-a;
-                    bank=bank+2;
-                }
-                break;
-            case 3:
-                if(P2==1){
-                    P2--;
-                    bank++;
-                }else{
-                    P2=P2-a;
-                    bank=bank+2;
-                }
-                break;
-            case 4:
-                if(P3==1){
-                    P3--;
-                    bank++;
-                }else{
-                    P3=P3-a;
-                    bank=bank+2;
-                }
-                break;
-            case 1:
-                if(P4==1){
-                    P4--;
-                    bank++;
-                }else{
-                    P4=P4-a;
-                    bank=bank+2;
-                }                
-                break;
-            default:
-                break;
-        }       
-    }
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
