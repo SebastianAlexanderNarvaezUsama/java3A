@@ -152,6 +152,11 @@ public class Aboutof extends javax.swing.JFrame {
         jMenu4.add(jMenuItem4);
 
         jMenuItem5.setText("Original repository");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
 
         jMenu2.add(jMenu4);
@@ -218,7 +223,9 @@ public class Aboutof extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+    Rules Rules=new Rules();
+    Rules.setVisible(true);
+    this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -226,6 +233,19 @@ public class Aboutof extends javax.swing.JFrame {
         Aboutof.setVisible(true);
         this.setVisible(false);         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        if(java.awt.Desktop.isDesktopSupported()){
+            java.awt.Desktop desktop =java.awt.Desktop.getDesktop();
+
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)){
+                try{
+                    java.net.URI uri=new java.net.URI("https://github.com/SebastianAlexanderNarvaezUsama/java3A/tree/master/GameDos/Spinning_Top");
+                    desktop.browse(uri);
+                }catch(URISyntaxException|IOException ex){}
+            }
+        }           // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

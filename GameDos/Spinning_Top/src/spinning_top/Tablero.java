@@ -353,7 +353,9 @@ public class Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+    Rules Rules=new Rules();
+    Rules.setVisible(true);
+    this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -388,7 +390,7 @@ public void Valide(){
     jLabelTCoins.setText(Integer.toString(P1));
     jLabelTBank.setText(Integer.toString(bank));
     Wins.setVisible(true);
-    
+    this.setVisible(false);
    }
        if(P2>P1&&P2>P3&&P2>P4&&P1<=0&&P3<=0&&P4<=0){
            
@@ -398,6 +400,7 @@ public void Valide(){
         jLabelTCoins.setText(Integer.toString(P2));
         jLabelTBank.setText(Integer.toString(bank));
         Wins.setVisible(true);
+        this.setVisible(false);
        }
            if(P3>P1&&P3>P2&&P3>P4&&P1<=0&&P2<=0&&P4<=0){
                
@@ -407,6 +410,7 @@ public void Valide(){
             jLabelTCoins.setText(Integer.toString(P3));
             jLabelTBank.setText(Integer.toString(bank));
             Wins.setVisible(true);
+            this.setVisible(false);
            }
                if(P4>P1&&P4>P2&&P4>P3&&P1<=0&&P2<=0&&P3<=0){
                    
@@ -416,6 +420,7 @@ public void Valide(){
                 jLabelTCoins.setText(Integer.toString(P4));
                 jLabelTBank.setText(Integer.toString(bank));
                 Wins.setVisible(true);
+                this.setVisible(false);
                }
      
 }

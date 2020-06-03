@@ -31,6 +31,8 @@ public class Wins extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButtonTry = new javax.swing.JButton();
+        jButtonInicio = new javax.swing.JButton();
         JLabelBank = new javax.swing.JLabel();
         jLabelplayerwin = new javax.swing.JLabel();
         jLabelwinerall = new javax.swing.JLabel();
@@ -38,13 +40,37 @@ public class Wins extends javax.swing.JFrame {
         jLabelwinerall2 = new javax.swing.JLabel();
         jLabelwinerall3 = new javax.swing.JLabel();
         jLabelTBank = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setLayout(null);
+
+        jButtonTry.setBackground(new java.awt.Color(212, 175, 55));
+        jButtonTry.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
+        jButtonTry.setText("Try again");
+        jButtonTry.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonTry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTryActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonTry);
+        jButtonTry.setBounds(270, 220, 120, 30);
+
+        jButtonInicio.setBackground(new java.awt.Color(212, 175, 55));
+        jButtonInicio.setFont(new java.awt.Font("Old English Text MT", 1, 18)); // NOI18N
+        jButtonInicio.setText("Inicio");
+        jButtonInicio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInicioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonInicio);
+        jButtonInicio.setBounds(150, 220, 110, 30);
 
         JLabelBank.setFont(new java.awt.Font("Old English Text MT", 0, 60)); // NOI18N
         JLabelBank.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,14 +112,6 @@ public class Wins extends javax.swing.JFrame {
         jPanel1.add(jLabelTBank);
         jLabelTBank.setBounds(280, 160, 150, 50);
 
-        jButton1.setText("Inicio");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(170, 210, 90, 50);
-
-        jButton2.setText("Tri again?");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(280, 210, 130, 50);
-
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Wins.png"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -113,6 +131,18 @@ public class Wins extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonTryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTryActionPerformed
+    ConfigZone ConfigZone=new ConfigZone();
+    ConfigZone.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_jButtonTryActionPerformed
+
+    private void jButtonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicioActionPerformed
+    MenuConfig MenuConfig=new MenuConfig();
+    MenuConfig.setVisible(true);
+    this.setVisible(false);  
+    }//GEN-LAST:event_jButtonInicioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,8 +181,8 @@ public class Wins extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabelBank;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonInicio;
+    private javax.swing.JButton jButtonTry;
     private javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel jLabelTBank;
     public static javax.swing.JLabel jLabelTCoins;
