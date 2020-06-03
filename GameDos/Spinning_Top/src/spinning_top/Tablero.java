@@ -9,6 +9,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import static spinning_top.Wins.jLabelTBank;
+import static spinning_top.Wins.jLabelTCoins;
+import static spinning_top.Wins.jLabelplayerwin;
+import static spinning_top.Wins.jLabelwinerall;
+
 
 /**
  *
@@ -377,20 +382,39 @@ public class Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 public void Valide(){
    if(P1>P2&&P1>P3&&P1>P4&&P2<=0&&P3<=0&&P4<=0){
-    Wins Wins = new Wins(); 
+    Wins Wins = new Wins();   
+    jLabelwinerall.setText("Player 1");
+    jLabelplayerwin.setIcon(new ImageIcon(getClass().getResource("/Icons/Player1.png")));
+    jLabelTCoins.setText(Integer.toString(P1));
+    jLabelTBank.setText(Integer.toString(bank));
     Wins.setVisible(true);
     
    }
        if(P2>P1&&P2>P3&&P2>P4&&P1<=0&&P3<=0&&P4<=0){
-        Wins Wins = new Wins(); 
+           
+        Wins Wins = new Wins();
+        jLabelwinerall.setText("Player 2");
+        jLabelplayerwin.setIcon(new ImageIcon(getClass().getResource("/Icons/Player 2.png")));
+        jLabelTCoins.setText(Integer.toString(P2));
+        jLabelTBank.setText(Integer.toString(bank));
         Wins.setVisible(true);
        }
            if(P3>P1&&P3>P2&&P3>P4&&P1<=0&&P2<=0&&P4<=0){
+               
             Wins Wins = new Wins(); 
+            jLabelwinerall.setText("Player 3");
+            jLabelplayerwin.setIcon(new ImageIcon(getClass().getResource("/Icons/Player 3.png")));
+            jLabelTCoins.setText(Integer.toString(P3));
+            jLabelTBank.setText(Integer.toString(bank));
             Wins.setVisible(true);
            }
                if(P4>P1&&P4>P2&&P4>P3&&P1<=0&&P2<=0&&P3<=0){
-                Wins Wins = new Wins(); 
+                   
+                Wins Wins = new Wins();
+                jLabelwinerall.setText("Player 4");
+                jLabelplayerwin.setIcon(new ImageIcon(getClass().getResource("/Icons/Player 4.png")));
+                jLabelTCoins.setText(Integer.toString(P4));
+                jLabelTBank.setText(Integer.toString(bank));
                 Wins.setVisible(true);
                }
      
