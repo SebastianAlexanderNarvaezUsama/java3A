@@ -354,8 +354,7 @@ public class Tablero extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
     Rules Rules=new Rules();
-    Rules.setVisible(true);
-    this.setVisible(false);        // TODO add your handling code here:
+    Rules.setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -438,7 +437,11 @@ public void Pon2(){
 }
 public void toma1(){
     a=1;
+    if(bank>=1){
     bank=bank-1;
+    }else if(bank<=0){
+        
+    }
 }
 public void todosponen(){
     a=1;
@@ -446,7 +449,10 @@ public void todosponen(){
 }
 public void toma2(){
     a=2;
-    bank=bank-2; 
+    if(bank>=1){
+    bank=bank-2;
+    }else if(bank<=0){
+    } 
 }
     private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
 
