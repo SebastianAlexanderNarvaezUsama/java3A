@@ -5,18 +5,24 @@
  */
 package spinning_top;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Asus
  */
 public class Rules extends javax.swing.JFrame {
-
+    FondoPanelRules backgroundrules=new FondoPanelRules();
+    FondoPanelRulesGame backgroundreglas=new FondoPanelRulesGame(); 
     /**
      * Creates new form Rules
      */
     public Rules() {
+        this.setContentPane(backgroundrules);
+        this.setContentPane(backgroundreglas);
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Icons/logo fin.png")).getImage());
     }
@@ -30,27 +36,52 @@ public class Rules extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new FondoPanelRules();
+        jPanel2 = new FondoPanelRulesGame();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Spinning top - Rules");
+        setResizable(false);
 
         jPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Rules.png"))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 428, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 198, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(110, 120, 430, 200);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/gato_gris.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 400, 450);
+        jLabel1.setBounds(20, 280, 150, 150);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/gato_cafe.gif"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(450, 0, 190, 120);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
         );
 
         pack();
@@ -91,9 +122,35 @@ public class Rules extends javax.swing.JFrame {
             }
         });
     }
+    //Background
+    class FondoPanelRules extends JPanel{
+        private Image FondoRulesgame;
+        @Override
+        public void paint(Graphics g){
+            FondoRulesgame=new ImageIcon(getClass().getResource("/Icons/Rules.png")).getImage();
+            g.drawImage(FondoRulesgame, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
+    
+    
+    //Background 2
+    class FondoPanelRulesGame extends JPanel{
+        private Image FondoRulesgame2;
+        @Override
+        public void paint(Graphics g){
+            FondoRulesgame2=new ImageIcon(getClass().getResource("/Icons/rules_game2.png")).getImage();
+            g.drawImage(FondoRulesgame2, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
