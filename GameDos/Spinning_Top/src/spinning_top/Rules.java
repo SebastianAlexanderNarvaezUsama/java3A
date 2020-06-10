@@ -140,7 +140,7 @@ public class Rules extends javax.swing.JFrame {
         private Image FondoRulesgame2;
         @Override
         public void paint(Graphics g){
-            FondoRulesgame2=new ImageIcon(getClass().getResource("/Icons/rules_game2.png")).getImage();
+            FondoRulesgame2=new ImageIcon(getClass().getResource("/Icons/rules_game.png")).getImage();
             g.drawImage(FondoRulesgame2, 0, 0, getWidth(), getHeight(), this);
             setOpaque(false);
             super.paint(g);
